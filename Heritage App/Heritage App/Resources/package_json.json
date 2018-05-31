@@ -3,7 +3,7 @@
                 {
                 "id": 0,
                 "image": "music_1",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 1,
@@ -13,7 +13,7 @@
                 {
                 "id": 2,
                 "image": "music_3",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 3,
@@ -23,7 +23,7 @@
                 {
                 "id": 4,
                 "image": "music_5",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
             {
             "id": 4,
@@ -33,7 +33,7 @@
             {
             "id": 4,
             "image": "music_7",
-            "is_right_answer": 0
+            "is_right_answer": 1
             },
             {
             "id": 4,
@@ -55,17 +55,17 @@
                 {
                 "id": 1,
                 "image": "food_2",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 2,
                 "image": "food_3",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 3,
                 "image": "food_4",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
                 {
                 "id": 4,
@@ -90,7 +90,7 @@
            {
            "id": 8,
            "image": "food_9",
-           "is_right_answer": 0
+           "is_right_answer": 1
            }
                 ],
   "clothes": [
@@ -102,7 +102,7 @@
                 {
                 "id": 1,
                 "image": "clothes_2",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 2,
@@ -122,7 +122,7 @@
               {
               "id": 4,
               "image": "clothes_6",
-              "is_right_answer": 0
+              "is_right_answer": 1
               },
               {
               "id": 4,
@@ -132,7 +132,7 @@
               {
               "id": 4,
               "image": "clothes_8",
-              "is_right_answer": 0
+              "is_right_answer": 1
               },
               {
               "id": 4,

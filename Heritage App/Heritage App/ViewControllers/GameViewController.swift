@@ -87,7 +87,7 @@ class GameViewController: BaseViewController {
     }
     
     private func checkQuestion(question: Question, imageView: UIImageView) {
-        let answerView: UIView = createAnswerView(withTrueType: question.isRightAnswer?.intValue == 0 ? true : false)
+        let answerView: UIView = createAnswerView(withTrueType: question.isRightAnswer?.intValue == 1 ? true : false)
         imageView.addSubview(answerView)
         answerView.translatesAutoresizingMaskIntoConstraints = false
         answerView.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
@@ -98,7 +98,7 @@ class GameViewController: BaseViewController {
         imageView.removeGestureRecognizer((imageView.gestureRecognizers?.first)!)
         
         //counting
-        if question.isRightAnswer?.intValue == 0 {
+        if question.isRightAnswer?.intValue == 1 {
             countOfRightAnswers += 1
             countOfRightAnswersLabel.text = "\(countOfRightAnswers)"
         }
