@@ -19,7 +19,7 @@ class GameViewController: BaseViewController {
     @IBOutlet weak var countOfRightAnswersLabel: UILabel!
     
     private var countOfAttempts: Int = 0
-    private var seconds: Int = 30
+    private var seconds: Double = 30.0
     private var countOfRightAnswers: Int = 0
     private var timer: Timer!
     
@@ -94,15 +94,17 @@ class GameViewController: BaseViewController {
     }
     
     private func beginTimerUpdates() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
-        self?.seconds -= 1
-        self?.secondsLabel.text = "\((self?.seconds)!)"
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
     
-        if self?.seconds == 0 {
-        self?.loseAction()
-        timer.invalidate()
+    @objc private func timerAction() {
+        self.seconds -= 0.1
+        self.secondsLabel.text = "\(Int(self.seconds))"
+        
+        if self.seconds <= 0 {
+            self.loseAction()
+            timer.invalidate()
         }
-        })
     }
     
     @objc func tapAction(sender: UITapGestureRecognizer) {
