@@ -18,6 +18,11 @@
 		3A4CAEFD20BEAC7A00021363 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CAEFB20BEAC7A00021363 /* Question.swift */; };
 		3A4CAF0420BFFB6B00021363 /* PTSansNarrowBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CAF0320BFFB6B00021363 /* PTSansNarrowBold.ttf */; };
 		449CA2109A1650614244DB39 /* Pods_Heritage_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A06D93855248AB1B403826 /* Pods_Heritage_App.framework */; };
+		6B0C723C20C0698100AB904C /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C723B20C0698100AB904C /* WinViewController.swift */; };
+		6B0C723F20C0699200AB904C /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C723E20C0699200AB904C /* LoseViewController.swift */; };
+		6B0C724220C069AE00AB904C /* SelectCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C724120C069AE00AB904C /* SelectCampaignViewController.swift */; };
+		6B0C724520C06AF000AB904C /* SelectDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C724420C06AF000AB904C /* SelectDifficultyViewController.swift */; };
+		6B0C724A20C06CED00AB904C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C724920C06CED00AB904C /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		3A4CAEFB20BEAC7A00021363 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3A4CAF0320BFFB6B00021363 /* PTSansNarrowBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTSansNarrowBold.ttf; sourceTree = "<group>"; };
 		56CCD75EDB9FDF14211BA0E6 /* Pods-Heritage App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heritage App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heritage App/Pods-Heritage App.release.xcconfig"; sourceTree = "<group>"; };
+		6B0C723B20C0698100AB904C /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		6B0C723E20C0699200AB904C /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
+		6B0C724120C069AE00AB904C /* SelectCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCampaignViewController.swift; sourceTree = "<group>"; };
+		6B0C724420C06AF000AB904C /* SelectDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyViewController.swift; sourceTree = "<group>"; };
+		6B0C724920C06CED00AB904C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B5A06D93855248AB1B403826 /* Pods_Heritage_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heritage_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F114C78A13968466602664E0 /* Pods-Heritage App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heritage App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heritage App/Pods-Heritage App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,10 +100,10 @@
 			children = (
 				3A4CAEDE20BEA11600021363 /* AppDelegate.swift */,
 				3A4CAEF820BEAA9500021363 /* Models */,
-				3A4CAEF720BEAA9000021363 /* Resources */,
 				3A4CAEF020BEA16B00021363 /* ViewControllers */,
 				3A4CAEE220BEA11600021363 /* Main.storyboard */,
 				3A4CAEE520BEA11800021363 /* Assets.xcassets */,
+				3A4CAEF720BEAA9000021363 /* Resources */,
 				3A4CAEE720BEA11800021363 /* LaunchScreen.storyboard */,
 				3A4CAEEA20BEA11800021363 /* Info.plist */,
 			);
@@ -103,9 +113,14 @@
 		3A4CAEF020BEA16B00021363 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6B0C724620C06C5F00AB904C /* Game */,
+				6B0C724020C0699E00AB904C /* Select Campaign */,
+				6B0C724320C06AE400AB904C /* Select Difficulty */,
+				6B0C724820C06CE000AB904C /* Home */,
+				6B0C724720C06C6400AB904C /* Categories */,
+				6B0C723D20C0698900AB904C /* Lose */,
+				6B0C723A20C0697600AB904C /* Win */,
 				3A4CAEF120BEA17E00021363 /* BaseVIewController.swift */,
-				3A4CAEF320BEA1E200021363 /* CategoriesViewController.swift */,
-				3A4CAEF520BEA51300021363 /* GameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -133,6 +148,62 @@
 				3A4CAF0320BFFB6B00021363 /* PTSansNarrowBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6B0C723A20C0697600AB904C /* Win */ = {
+			isa = PBXGroup;
+			children = (
+				6B0C723B20C0698100AB904C /* WinViewController.swift */,
+			);
+			path = Win;
+			sourceTree = "<group>";
+		};
+		6B0C723D20C0698900AB904C /* Lose */ = {
+			isa = PBXGroup;
+			children = (
+				6B0C723E20C0699200AB904C /* LoseViewController.swift */,
+			);
+			path = Lose;
+			sourceTree = "<group>";
+		};
+		6B0C724020C0699E00AB904C /* Select Campaign */ = {
+			isa = PBXGroup;
+			children = (
+				6B0C724120C069AE00AB904C /* SelectCampaignViewController.swift */,
+			);
+			path = "Select Campaign";
+			sourceTree = "<group>";
+		};
+		6B0C724320C06AE400AB904C /* Select Difficulty */ = {
+			isa = PBXGroup;
+			children = (
+				6B0C724420C06AF000AB904C /* SelectDifficultyViewController.swift */,
+			);
+			path = "Select Difficulty";
+			sourceTree = "<group>";
+		};
+		6B0C724620C06C5F00AB904C /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				3A4CAEF520BEA51300021363 /* GameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		6B0C724720C06C6400AB904C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3A4CAEF320BEA1E200021363 /* CategoriesViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		6B0C724820C06CE000AB904C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6B0C724920C06CED00AB904C /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +323,12 @@
 				3A4CAEFD20BEAC7A00021363 /* Question.swift in Sources */,
 				3A4CAEF620BEA51300021363 /* GameViewController.swift in Sources */,
 				3A4CAEF420BEA1E200021363 /* CategoriesViewController.swift in Sources */,
+				6B0C723F20C0699200AB904C /* LoseViewController.swift in Sources */,
+				6B0C724220C069AE00AB904C /* SelectCampaignViewController.swift in Sources */,
+				6B0C724A20C06CED00AB904C /* HomeViewController.swift in Sources */,
+				6B0C723C20C0698100AB904C /* WinViewController.swift in Sources */,
 				3A4CAEF220BEA17E00021363 /* BaseVIewController.swift in Sources */,
+				6B0C724520C06AF000AB904C /* SelectDifficultyViewController.swift in Sources */,
 				3A4CAEDF20BEA11600021363 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Heritage App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,7 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Heritage App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
