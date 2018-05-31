@@ -1,0 +1,6 @@
+framework module Pods_Heritage_App {
+  umbrella header "Pods-Heritage App-umbrella.h"
+
+  export *
+  module * { export * }
+}
