@@ -614,7 +614,6 @@
                                 </constraints>
                                 <state key="normal" image="settings_icon"/>
                                 <connections>
-                                    <action selector="configButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="fXV-NI-W7M"/>
                                     <action selector="settingsButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="rLh-HX-r5j"/>
                                 </connections>
                             </button>

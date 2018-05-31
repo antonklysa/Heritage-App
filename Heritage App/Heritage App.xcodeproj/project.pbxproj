@@ -474,15 +474,18 @@
 			baseConfigurationReference = F114C78A13968466602664E0 /* Pods-Heritage App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9JLRSR336H;
 				INFOPLIST_FILE = "Heritage App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AK.Heritage-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oze-lca.heritage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8141ec22-a888-4dcc-86ce-7eab4f18db65";
+				PROVISIONING_PROFILE_SPECIFIER = WildCardProvisionProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -493,15 +496,19 @@
 			baseConfigurationReference = 56CCD75EDB9FDF14211BA0E6 /* Pods-Heritage App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9JLRSR336H;
 				INFOPLIST_FILE = "Heritage App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AK.Heritage-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oze-lca.heritage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8cb5027c-d0e3-4fc3-b50c-00e1b96f6fd1";
+				PROVISIONING_PROFILE_SPECIFIER = HeritageApp_AdHoc;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
