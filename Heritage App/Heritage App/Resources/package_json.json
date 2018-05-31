@@ -1,0 +1,144 @@
+{
+  "music": [
+                {
+                "id": 0,
+                "image": "music_1",
+                "is_right_answer": 1
+                },
+                {
+                "id": 1,
+                "image": "music_2",
+                "is_right_answer": 1
+                },
+                {
+                "id": 2,
+                "image": "music_3",
+                "is_right_answer": 1
+                },
+                {
+                "id": 3,
+                "image": "music_4",
+                "is_right_answer": 0
+                },
+                {
+                "id": 4,
+                "image": "music_5",
+                "is_right_answer": 0
+                },
+            {
+            "id": 4,
+            "image": "music_6",
+            "is_right_answer": 0
+            },
+            {
+            "id": 4,
+            "image": "music_7",
+            "is_right_answer": 0
+            },
+            {
+            "id": 4,
+            "image": "music_8",
+            "is_right_answer": 0
+            },
+            {
+            "id": 4,
+            "image": "music_9",
+            "is_right_answer": 0
+            }
+                ],
+  "food": [
+                {
+                "id": 0,
+                "image": "food_1",
+                "is_right_answer": 1
+                },
+                {
+                "id": 1,
+                "image": "food_2",
+                "is_right_answer": 1
+                },
+                {
+                "id": 2,
+                "image": "food_3",
+                "is_right_answer": 1
+                },
+                {
+                "id": 3,
+                "image": "food_4",
+                "is_right_answer": 0
+                },
+                {
+                "id": 4,
+                "image": "food_5",
+                "is_right_answer": 0
+                },
+           {
+           "id": 5,
+           "image": "food_6",
+           "is_right_answer": 0
+           },
+           {
+           "id": 6,
+           "image": "food_7",
+           "is_right_answer": 0
+           },
+           {
+           "id": 7,
+           "image": "food_8",
+           "is_right_answer": 0
+           },
+           {
+           "id": 8,
+           "image": "food_9",
+           "is_right_answer": 0
+           }
+                ],
+  "clothes": [
+                {
+                "id": 0,
+                "image": "clothes_1",
+                "is_right_answer": 1
+                },
+                {
+                "id": 1,
+                "image": "clothes_2",
+                "is_right_answer": 1
+                },
+                {
+                "id": 2,
+                "image": "clothes_3",
+                "is_right_answer": 1
+                },
+                {
+                "id": 3,
+                "image": "clothes_4",
+                "is_right_answer": 0
+                },
+                {
+                "id": 4,
+                "image": "clothes_5",
+                "is_right_answer": 0
+                },
+              {
+              "id": 4,
+              "image": "clothes_6",
+              "is_right_answer": 0
+              },
+              {
+              "id": 4,
+              "image": "clothes_7",
+              "is_right_answer": 0
+              },
+              {
+              "id": 4,
+              "image": "clothes_8",
+              "is_right_answer": 0
+              },
+              {
+              "id": 4,
+              "image": "clothes_9",
+              "is_right_answer": 0
+              }
+                ]
+}
+

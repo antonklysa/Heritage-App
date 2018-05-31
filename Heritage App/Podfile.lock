@@ -1,0 +1,22 @@
+PODS:
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.7)
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
+
+DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout/Swift
+  - Mantle (~> 2.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CHTCollectionViewWaterfallLayout
+    - Mantle
+
+SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+
+PODFILE CHECKSUM: 65cb7efe8098239bd8903ae22434117543d243ac
+
+COCOAPODS: 1.5.0
