@@ -25,9 +25,11 @@ class GameViewController: BaseViewController {
     
     
     @IBOutlet weak var labelImageView: UIImageView!
+    @IBOutlet weak var labelImageViewTopConstraint: NSLayoutConstraint!
     
     //container view
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var timerContainerView: UIView!
     
     //images array
     @IBOutlet var imagesArray: [UIImageView]!
@@ -39,9 +41,32 @@ class GameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.containerView.alpha = 0.0
+        self.timerContainerView.alpha = 0.0
+        
         setupControllerProps()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.75, delay: 0.0, options: .curveEaseInOut, animations: {  [weak self] in
+            self?.labelImageView.alpha = 1
+        }) { (flag) in
+            self.labelImageViewTopConstraint.constant = 83
+            UIView.animate(withDuration: 0.75, delay: 1.0, options: .curveEaseInOut, animations: { [weak self] in
+                self?.view.layoutIfNeeded()
+                }, completion: { (flag) in
+                    UIView.animate(withDuration: 0.75, delay: 0.75, options: .curveEaseInOut, animations: { [weak self] in
+                        self?.containerView.alpha = 1.0
+                        self?.timerContainerView.alpha = 1.0
+                        }, completion: { (flag) in
+                            self.beginTimerUpdates()
+                    })
+            })
+        }
+    }
     
     //MARK: actions
     
@@ -66,15 +91,17 @@ class GameViewController: BaseViewController {
             let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
             imageView.addGestureRecognizer(tapGesture)
         }
-        
+    }
+    
+    private func beginTimerUpdates() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
-            self?.seconds -= 1
-            self?.secondsLabel.text = "\((self?.seconds)!)"
-            
-            if self?.seconds == 0 {
-                self?.loseAction()
-                timer.invalidate()
-            }
+        self?.seconds -= 1
+        self?.secondsLabel.text = "\((self?.seconds)!)"
+    
+        if self?.seconds == 0 {
+        self?.loseAction()
+        timer.invalidate()
+        }
         })
     }
     

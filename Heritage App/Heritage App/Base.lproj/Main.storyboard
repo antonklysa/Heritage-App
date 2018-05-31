@@ -296,8 +296,12 @@
                                     <constraint firstItem="OZf-X1-n6F" firstAttribute="top" secondItem="Cij-GP-JQP" secondAttribute="bottom" constant="4" id="vuy-d6-cpz"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSc-xU-Xwk">
-                                <rect key="frame" x="392" y="73" width="240" height="75"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XSc-xU-Xwk">
+                                <rect key="frame" x="80" y="347" width="864" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="864" id="WyK-TF-HfX"/>
+                                    <constraint firstAttribute="height" constant="75" id="jrz-8Y-b3N"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-Fg-WaF">
                                 <rect key="frame" x="684" y="35" width="315" height="45"/>
@@ -378,9 +382,9 @@
                             <constraint firstItem="3bK-0D-BJH" firstAttribute="top" secondItem="1x5-yc-ude" secondAttribute="top" id="I3Z-Ra-CiL"/>
                             <constraint firstItem="XSc-xU-Xwk" firstAttribute="centerX" secondItem="3bK-0D-BJH" secondAttribute="centerX" id="JW3-Ez-srZ"/>
                             <constraint firstItem="3bK-0D-BJH" firstAttribute="trailing" secondItem="Sfo-bu-eXr" secondAttribute="trailing" id="Odh-49-fwZ"/>
-                            <constraint firstItem="vFZ-4U-RMJ" firstAttribute="top" secondItem="XSc-xU-Xwk" secondAttribute="bottom" constant="35" id="Xox-mX-Uv6"/>
                             <constraint firstItem="vFZ-4U-RMJ" firstAttribute="centerY" secondItem="Sfo-bu-eXr" secondAttribute="centerY" constant="25" id="YJ7-Se-0rn"/>
                             <constraint firstItem="Rg3-Ui-xVX" firstAttribute="leading" secondItem="Sfo-bu-eXr" secondAttribute="leading" id="aCs-To-2yt"/>
+                            <constraint firstItem="XSc-xU-Xwk" firstAttribute="top" secondItem="Sfo-bu-eXr" secondAttribute="top" constant="327" id="d0r-e2-TO0"/>
                             <constraint firstItem="vFZ-4U-RMJ" firstAttribute="centerX" secondItem="Sfo-bu-eXr" secondAttribute="centerX" id="nbf-CL-4q1"/>
                             <constraint firstItem="Sfo-bu-eXr" firstAttribute="trailing" secondItem="Qmf-Fg-WaF" secondAttribute="trailing" constant="25" id="som-US-vX6"/>
                         </constraints>
@@ -391,7 +395,9 @@
                         <outlet property="countOfAttemptsLabel" destination="zI5-8o-kun" id="Kgf-cu-fyQ"/>
                         <outlet property="countOfRightAnswersLabel" destination="li7-OR-lby" id="07Q-TX-XzZ"/>
                         <outlet property="labelImageView" destination="XSc-xU-Xwk" id="4Xh-ot-Lkl"/>
+                        <outlet property="labelImageViewTopConstraint" destination="d0r-e2-TO0" id="U4S-BP-7fh"/>
                         <outlet property="secondsLabel" destination="iPE-2B-iH2" id="hqw-18-Nf3"/>
+                        <outlet property="timerContainerView" destination="Qmf-Fg-WaF" id="MPK-Bc-Ied"/>
                         <outletCollection property="imagesArray" destination="Hj4-JD-GHs" collectionClass="NSMutableArray" id="ZQy-ft-loI"/>
                         <outletCollection property="imagesArray" destination="Ie9-Fd-htT" collectionClass="NSMutableArray" id="RU4-9K-wZz"/>
                         <outletCollection property="imagesArray" destination="tls-RO-nyo" collectionClass="NSMutableArray" id="DgN-fR-noq"/>
@@ -609,6 +615,7 @@
                                 <state key="normal" image="settings_icon"/>
                                 <connections>
                                     <action selector="configButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="fXV-NI-W7M"/>
+                                    <action selector="settingsButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="rLh-HX-r5j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -745,7 +752,7 @@
         <image name="select_difficulty_0" width="234" height="367"/>
         <image name="select_difficulty_1" width="234" height="367"/>
         <image name="select_difficulty_2" width="234" height="367"/>
-        <image name="settings_icon" width="16" height="16"/>
+        <image name="settings_icon" width="20" height="20"/>
         <image name="win_finish" width="150" height="38"/>
     </resources>
 </document>

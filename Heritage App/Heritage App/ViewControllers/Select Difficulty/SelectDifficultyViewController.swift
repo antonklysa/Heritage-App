@@ -21,4 +21,8 @@ class SelectDifficultyViewController: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func settingsButtonAction(_ sender: Any) {
+        
+    }
+    
 }
