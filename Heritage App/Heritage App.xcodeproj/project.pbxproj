@@ -44,6 +44,8 @@
 		6BE6664F20C3F68C00162872 /* Campaign+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6664520C3F68B00162872 /* Campaign+CoreDataClass.swift */; };
 		6BE6665020C3F68C00162872 /* Scenario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6664620C3F68B00162872 /* Scenario+CoreDataProperties.swift */; };
 		6BE6665120C3F68C00162872 /* Gift+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6664720C3F68C00162872 /* Gift+CoreDataClass.swift */; };
+		6BE6665520C3F84700162872 /* win_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BE6665320C3F84700162872 /* win_sound.wav */; };
+		6BE6665620C3F84700162872 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BE6665420C3F84700162872 /* wrong.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		6BE6664520C3F68B00162872 /* Campaign+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Campaign+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6BE6664620C3F68B00162872 /* Scenario+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6BE6664720C3F68C00162872 /* Gift+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gift+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6BE6665320C3F84700162872 /* win_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win_sound.wav; sourceTree = "<group>"; };
+		6BE6665420C3F84700162872 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		B5A06D93855248AB1B403826 /* Pods_Heritage_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heritage_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F114C78A13968466602664E0 /* Pods-Heritage App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heritage App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heritage App/Pods-Heritage App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +176,7 @@
 		3A4CAEF720BEAA9000021363 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6BE6665220C3F83E00162872 /* Audio */,
 				3A4CAF0220BFFB6B00021363 /* Fonts */,
 				3A4CAEF920BEAB2700021363 /* package_json.json */,
 			);
@@ -301,6 +306,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6BE6665220C3F83E00162872 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				6BE6665320C3F84700162872 /* win_sound.wav */,
+				6BE6665420C3F84700162872 /* wrong.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,8 +378,10 @@
 				3A4CAF0420BFFB6B00021363 /* PTSansNarrowBold.ttf in Resources */,
 				3A4CAEE920BEA11800021363 /* LaunchScreen.storyboard in Resources */,
 				3A4CAEE620BEA11800021363 /* Assets.xcassets in Resources */,
+				6BE6665620C3F84700162872 /* wrong.wav in Resources */,
 				3A4CAEFA20BEAB2700021363 /* package_json.json in Resources */,
 				3A4CAEE420BEA11600021363 /* Main.storyboard in Resources */,
+				6BE6665520C3F84700162872 /* win_sound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

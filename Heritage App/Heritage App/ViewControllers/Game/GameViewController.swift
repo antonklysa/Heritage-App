@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class GameViewController: BaseViewController {
     
@@ -18,6 +19,8 @@ class GameViewController: BaseViewController {
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var countOfRightAnswersLabel: UILabel!
     
+    private var player : AVAudioPlayer?
+
     private var countOfAttempts: Int = 0
     private var seconds: Double = 30.0
     private var countOfRightAnswers: Int = 0
@@ -130,6 +133,10 @@ class GameViewController: BaseViewController {
         if question.isRightAnswer?.intValue == 1 {
             countOfRightAnswers += 1
             countOfRightAnswersLabel.text = "\(countOfRightAnswers)"
+            
+            self.playCorrectAnswerSound()
+        } else {
+            self.playWrongAnswerSound()
         }
         
         countOfAttempts += 1
@@ -161,6 +168,34 @@ class GameViewController: BaseViewController {
         answerView.backgroundColor = (withTrueType == true ? UIColor(red: 135.0/255.0, green: 188.0/255.0, blue: 78.0/255.0, alpha: 0.8) : UIColor(red: 229.0/255.0, green: 62.0/255.0, blue: 54.0/255.0, alpha: 0.8))
         
         return answerView
+    }
+    
+    private func playCorrectAnswerSound() {
+        let url = Bundle.main.url(forResource:"win_sound", withExtension:"wav")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
+    
+    private func playWrongAnswerSound() {
+        let url = Bundle.main.url(forResource:"wrong", withExtension:"wav")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
     }
     
     private func winAction() {
