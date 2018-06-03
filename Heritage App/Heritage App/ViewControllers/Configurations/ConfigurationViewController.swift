@@ -83,10 +83,10 @@ class ConfigurationViewController: BaseViewController {
         self.channelsTableView.isHidden = true
         self.channelsTableView.reloadData()
         
-        if (PMISessionManager.teamName() == "LAMP") {
-            self.loggedInAsLabel.isHidden = true
-            self.nameLabel.isHidden = true
-        }
+//        if (PMISessionManager.defaultManager == "LAMP") {
+//            self.loggedInAsLabel.isHidden = true
+//            self.nameLabel.isHidden = true
+//        }
     }
     
     //MARK: Actions

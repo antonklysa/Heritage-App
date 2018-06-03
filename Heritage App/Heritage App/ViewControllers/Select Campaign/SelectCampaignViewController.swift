@@ -17,6 +17,9 @@ class SelectCampaignViewController: BaseViewController {
     //MARK: Actions
     
     @IBAction func campaignButtonAction(_ sender: UIButton) {
+        let selectedCampaign: HeritageCampaign = HeritageCampaign(rawValue: sender.tag)!
+        PMISessionManager.defaultManager.teamName = selectedCampaign.apiTitle()
+        
         let vc: SelectDifficultyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectDifficultyViewController.self)) as! SelectDifficultyViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -277,8 +277,8 @@
 		6BE6662320C3F65600162872 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				6BE6662520C3F66400162872 /* DownloadImageOperation.swift */,
 				6BE6662420C3F66400162872 /* PMISessionManager.swift */,
+				6BE6662520C3F66400162872 /* DownloadImageOperation.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

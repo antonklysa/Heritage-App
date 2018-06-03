@@ -11,6 +11,19 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
+enum HeritageCampaign : Int {
+    case POS
+    case CS
+    
+    func apiTitle() -> String {
+        switch self {
+        case .POS: return "POS"
+        case .CS: return "CS"
+        }
+    }
+    
+}
+
 class PMISessionManager: SessionManager {
     
     let baseURL: String = "http://pmanager.ozeapps.com/"
@@ -81,6 +94,22 @@ class PMISessionManager: SessionManager {
         }
     }
     
+    var teamName: String? {
+        get {
+            let value: String? =  UserDefaults.standard.object(forKey: "teamName") as? String
+            if (value == nil) {
+                return HeritageCampaign.POS.apiTitle()
+            }
+            return value
+        }
+        
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: "teamName")
+            defaults.synchronize()
+        }
+    }
+    
     static let defaultManager : PMISessionManager = {
         let configuration = URLSessionConfiguration.default
         
@@ -89,14 +118,9 @@ class PMISessionManager: SessionManager {
         return instance
     }()
     
-    
-    static func teamName() -> String {
-        return "music"
-    }
-    
     func login(login : String, password: String, completion:@escaping(NSError?) -> ()) {
         var parameters : [String:Any] = [:]
-        parameters["application_type"] = PMISessionManager.teamName()
+        parameters["application_type"] = PMISessionManager.defaultManager.teamName
         parameters["ipad_name"] = login
         parameters["did"] = UIDevice.current.identifierForVendor!.uuidString
         parameters["hostess_id"] = login
@@ -131,7 +155,7 @@ class PMISessionManager: SessionManager {
     
     func disconnect(completion:@escaping(NSError?) -> ()) {
         var parameters : [String:Any] = [:]
-        parameters["application_type"] = PMISessionManager.teamName()
+        parameters["application_type"] = PMISessionManager.defaultManager.teamName
         parameters["hostess_id"] = PMISessionManager.defaultManager.hostessId
         parameters["did"] = UIDevice.current.identifierForVendor!.uuidString
         
@@ -168,7 +192,7 @@ class PMISessionManager: SessionManager {
     
     func syncDistributedGifts(completion:@escaping(JSON?, NSError?) -> ()) {
         var parameters : [String:Any] = [:]
-        parameters["application_type"] = PMISessionManager.teamName()
+        parameters["application_type"] = PMISessionManager.defaultManager.teamName
         parameters["did"] = UIDevice.current.identifierForVendor!.uuidString
         parameters["hostess_id"] = PMISessionManager.defaultManager.hostessId
         
