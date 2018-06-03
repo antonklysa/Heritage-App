@@ -557,7 +557,7 @@
         <!--Select Difficulty View Controller-->
         <scene sceneID="fMS-HL-OYu">
             <objects>
-                <viewController storyboardIdentifier="SelectDifficultyViewController" id="cj4-8S-tRO" customClass="SelectDifficultyViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cj4-8S-tRO" customClass="SelectDifficultyViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ef9-jE-iwb">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -646,7 +646,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6S-Ne-jfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="-1412"/>
+            <point key="canvasLocation" x="398" y="-1413"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tm0-wM-8Tn">
@@ -855,7 +855,7 @@
         <!--Login View Controller-->
         <scene sceneID="W6v-dJ-xwD">
             <objects>
-                <viewController id="vPt-WZ-ibV" customClass="LoginViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="vPt-WZ-ibV" customClass="LoginViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ro3-Sx-U6t">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -975,7 +975,7 @@
         <!--Configuration View Controller-->
         <scene sceneID="Jva-IO-8bK">
             <objects>
-                <viewController storyboardIdentifier="ConfigurationViewController" id="YWf-Cr-M0I" customClass="ConfigurationViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigurationViewController" id="YWf-Cr-M0I" customClass="ConfigurationViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xk8-a9-8DU">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1180,7 +1180,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelTableViewCell" id="ScP-gb-Qy3" customClass="ChannelTableViewCell" customModule="MusicApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelTableViewCell" id="ScP-gb-Qy3" customClass="ChannelTableViewCell" customModule="Heritage_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="249" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ScP-gb-Qy3" id="8rH-dn-mHL">
@@ -1254,7 +1254,7 @@
         <!--Distributed Gifts History View Controller-->
         <scene sceneID="0Ww-FU-c1W">
             <objects>
-                <viewController storyboardIdentifier="DistributedGiftsHistoryViewController" id="ogc-0v-iUP" customClass="DistributedGiftsHistoryViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DistributedGiftsHistoryViewController" id="ogc-0v-iUP" customClass="DistributedGiftsHistoryViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0km-ju-M49">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1271,7 +1271,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GiftTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GiftTableViewCell" id="XQi-bN-apU" customClass="GiftTableViewCell" customModule="MusicApp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GiftTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GiftTableViewCell" id="XQi-bN-apU" customClass="GiftTableViewCell" customModule="Heritage_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="724" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQi-bN-apU" id="p7Z-cW-Cfw">
@@ -1360,6 +1360,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pej-Se-UVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2538" y="-1413"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Odd-wo-uc7">
+            <objects>
+                <navigationController storyboardIdentifier="SelectDifficultyViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Wh9-fF-m2r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1jy-fb-cyJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cj4-8S-tRO" kind="relationship" relationship="rootViewController" id="dnH-f7-3p7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYH-GL-jYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-403" y="-1413"/>
         </scene>
     </scenes>
     <resources>

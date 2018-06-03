@@ -20,7 +20,7 @@ class SelectCampaignViewController: BaseViewController {
         let selectedCampaign: HeritageCampaign = HeritageCampaign(rawValue: sender.tag)!
         PMISessionManager.defaultManager.teamName = selectedCampaign.apiTitle()
         
-        let vc: SelectDifficultyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectDifficultyViewController.self)) as! SelectDifficultyViewController
+        let vc: LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoginViewController.self)) as! LoginViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

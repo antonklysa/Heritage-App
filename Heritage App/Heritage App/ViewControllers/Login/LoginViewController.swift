@@ -21,7 +21,7 @@ class LoginViewController: BaseViewController {
     @IBAction func loginButtonAction(_ sender: Any) {
         // TESTING
         if TARGET_OS_SIMULATOR != 0 && self.usernameTextField.text!.count == 0 {
-            UIApplication.shared.keyWindow!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectChannelViewController")
+            UIApplication.shared.keyWindow!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectDifficultyViewController.self))
             return
         }
         
@@ -34,7 +34,7 @@ class LoginViewController: BaseViewController {
                 MBProgressHUD.hide(for: self.view, animated: true)
                 
                 if (error == nil) {
-                    UIApplication.shared.keyWindow!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectChannelViewController")
+                    UIApplication.shared.keyWindow!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectDifficultyViewController.self))
                 } else {
                     let alertController = UIAlertController(title: "Error.", message: error?.localizedDescription, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

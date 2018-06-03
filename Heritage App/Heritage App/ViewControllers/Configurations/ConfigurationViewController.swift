@@ -45,7 +45,7 @@ class ConfigurationViewController: BaseViewController {
         let versionString = String(format:"V%@(%@)", (Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String)!, (Bundle.main.infoDictionary?["CFBundleVersion"]  as? String)!)
         self.appVersionLabel.text = versionString
         
-        self.appNameLabel.text = "Chesterfield Music App"
+        self.appNameLabel.text = "Chesterfield Heritage App"
     }
     
     func updateUIForActiveCampaign() {
@@ -102,7 +102,7 @@ class ConfigurationViewController: BaseViewController {
                 MBProgressHUD.hide(for: self.view, animated: true)
                 
                 if (error == nil) {
-                    self.view.window!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+                    self.view.window!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectCampaignViewController.self)) as! SelectCampaignViewController
                 } else {
                     let alertController = UIAlertController(title: "Error.", message: "Something went wrong, please try again.", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
