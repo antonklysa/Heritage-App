@@ -20,7 +20,7 @@ class CredentialObject: MTLModel, MTLJSONSerializing {
     }
     
     @objc class func questionsJSONTransformer() -> ValueTransformer {
-        return MTLJSONAdapter.arrayTransformer(withModelClass: GAQuestion.self)
+        return MTLJSONAdapter.arrayTransformer(withModelClass: CredentialObject.self)
     }
     
 }
