@@ -46,6 +46,14 @@
 		6BE6665120C3F68C00162872 /* Gift+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6664720C3F68C00162872 /* Gift+CoreDataClass.swift */; };
 		6BE6665520C3F84700162872 /* win_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BE6665320C3F84700162872 /* win_sound.wav */; };
 		6BE6665620C3F84700162872 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BE6665420C3F84700162872 /* wrong.wav */; };
+		6BE6665920C3FA4B00162872 /* music_app_credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BE6665820C3FA4B00162872 /* music_app_credentials.json */; };
+		6BE6665C20C3FA5500162872 /* CredentianlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6665A20C3FA5400162872 /* CredentianlsViewController.swift */; };
+		6BE6665D20C3FA5500162872 /* CredentialsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6665B20C3FA5400162872 /* CredentialsCell.swift */; };
+		6BE6666120C3FB9300162872 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6666020C3FB9300162872 /* LoginViewController.swift */; };
+		6BE6666720C3FBA000162872 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6666320C3FBA000162872 /* ChannelTableViewCell.swift */; };
+		6BE6666820C3FBA000162872 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6666420C3FBA000162872 /* ConfigurationViewController.swift */; };
+		6BE6666920C3FBA000162872 /* GiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6666520C3FBA000162872 /* GiftTableViewCell.swift */; };
+		6BE6666A20C3FBA000162872 /* DistributedGiftsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6666620C3FBA000162872 /* DistributedGiftsHistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +98,14 @@
 		6BE6664720C3F68C00162872 /* Gift+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gift+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6BE6665320C3F84700162872 /* win_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win_sound.wav; sourceTree = "<group>"; };
 		6BE6665420C3F84700162872 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
+		6BE6665820C3FA4B00162872 /* music_app_credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = music_app_credentials.json; sourceTree = "<group>"; };
+		6BE6665A20C3FA5400162872 /* CredentianlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentianlsViewController.swift; sourceTree = "<group>"; };
+		6BE6665B20C3FA5400162872 /* CredentialsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsCell.swift; sourceTree = "<group>"; };
+		6BE6666020C3FB9300162872 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6BE6666320C3FBA000162872 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		6BE6666420C3FBA000162872 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		6BE6666520C3FBA000162872 /* GiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftTableViewCell.swift; sourceTree = "<group>"; };
+		6BE6666620C3FBA000162872 /* DistributedGiftsHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistributedGiftsHistoryViewController.swift; sourceTree = "<group>"; };
 		B5A06D93855248AB1B403826 /* Pods_Heritage_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heritage_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F114C78A13968466602664E0 /* Pods-Heritage App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heritage App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heritage App/Pods-Heritage App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +177,8 @@
 		3A4CAEF020BEA16B00021363 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6BE6665F20C3FB8B00162872 /* Login */,
+				6BE6666220C3FB9B00162872 /* Configurations */,
 				6B0C724020C0699E00AB904C /* Select Campaign */,
 				6B0C724320C06AE400AB904C /* Select Difficulty */,
 				6B0C724820C06CE000AB904C /* Home */,
@@ -168,6 +186,7 @@
 				6B0C724720C06C6400AB904C /* Categories */,
 				6B0C723D20C0698900AB904C /* Lose */,
 				6B0C723A20C0697600AB904C /* Win */,
+				6BE6665720C3FA4000162872 /* Credentials */,
 				3A4CAEF120BEA17E00021363 /* BaseVIewController.swift */,
 			);
 			path = ViewControllers;
@@ -315,6 +334,43 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		6BE6665720C3FA4000162872 /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				6BE6665E20C3FA5700162872 /* Data */,
+				6BE6665B20C3FA5400162872 /* CredentialsCell.swift */,
+				6BE6665A20C3FA5400162872 /* CredentianlsViewController.swift */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		6BE6665E20C3FA5700162872 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6BE6665820C3FA4B00162872 /* music_app_credentials.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6BE6665F20C3FB8B00162872 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6BE6666020C3FB9300162872 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6BE6666220C3FB9B00162872 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				6BE6666320C3FBA000162872 /* ChannelTableViewCell.swift */,
+				6BE6666520C3FBA000162872 /* GiftTableViewCell.swift */,
+				6BE6666420C3FBA000162872 /* ConfigurationViewController.swift */,
+				6BE6666620C3FBA000162872 /* DistributedGiftsHistoryViewController.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE6665920C3FA4B00162872 /* music_app_credentials.json in Resources */,
 				3A4CAF0420BFFB6B00021363 /* PTSansNarrowBold.ttf in Resources */,
 				3A4CAEE920BEA11800021363 /* LaunchScreen.storyboard in Resources */,
 				3A4CAEE620BEA11800021363 /* Assets.xcassets in Resources */,
@@ -452,6 +509,7 @@
 				3A4CAEF620BEA51300021363 /* GameViewController.swift in Sources */,
 				6BE6662620C3F66400162872 /* PMISessionManager.swift in Sources */,
 				6BE6662720C3F66400162872 /* DownloadImageOperation.swift in Sources */,
+				6BE6666820C3FBA000162872 /* ConfigurationViewController.swift in Sources */,
 				6BE6663820C3F68700162872 /* Gift+DictionaryInitializer.swift in Sources */,
 				6BE6664B20C3F68C00162872 /* Campaign+CoreDataProperties.swift in Sources */,
 				6BE6662E20C3F67500162872 /* PMI.xcdatamodeld in Sources */,
@@ -459,22 +517,28 @@
 				6B0C723F20C0699200AB904C /* LoseViewController.swift in Sources */,
 				6B0C724220C069AE00AB904C /* SelectCampaignViewController.swift in Sources */,
 				6BE6664E20C3F68C00162872 /* Scenario+CoreDataClass.swift in Sources */,
+				6BE6665C20C3FA5500162872 /* CredentianlsViewController.swift in Sources */,
 				6B0C724A20C06CED00AB904C /* HomeViewController.swift in Sources */,
 				6BE6664820C3F68C00162872 /* AppearanceTheme+CoreDataProperties.swift in Sources */,
 				6BE6663A20C3F68700162872 /* Campaign+CoreDataExtensions.swift in Sources */,
+				6BE6666920C3FBA000162872 /* GiftTableViewCell.swift in Sources */,
 				6BE6665120C3F68C00162872 /* Gift+CoreDataClass.swift in Sources */,
+				6BE6665D20C3FA5500162872 /* CredentialsCell.swift in Sources */,
 				6BE6665020C3F68C00162872 /* Scenario+CoreDataProperties.swift in Sources */,
 				6BE6664C20C3F68C00162872 /* GiftScenario+CoreDataClass.swift in Sources */,
 				6BE6664A20C3F68C00162872 /* Gift+CoreDataProperties.swift in Sources */,
 				6B0C723C20C0698100AB904C /* WinViewController.swift in Sources */,
 				6BE6662F20C3F67500162872 /* String+Extensions.swift in Sources */,
 				3A4CAEF220BEA17E00021363 /* BaseVIewController.swift in Sources */,
+				6BE6666720C3FBA000162872 /* ChannelTableViewCell.swift in Sources */,
 				6BE6663B20C3F68700162872 /* GiftScenario+DictionaryInitializer.swift in Sources */,
 				6BE6664D20C3F68C00162872 /* GiftScenario+CoreDataProperties.swift in Sources */,
 				6B0C724520C06AF000AB904C /* SelectDifficultyViewController.swift in Sources */,
 				6BE6664920C3F68C00162872 /* AppearanceTheme+CoreDataClass.swift in Sources */,
+				6BE6666A20C3FBA000162872 /* DistributedGiftsHistoryViewController.swift in Sources */,
 				6BE6663C20C3F68700162872 /* Scenario+DictionaryInitializer.swift in Sources */,
 				3A4CAEDF20BEA11600021363 /* AppDelegate.swift in Sources */,
+				6BE6666120C3FB9300162872 /* LoginViewController.swift in Sources */,
 				6BE6663920C3F68700162872 /* AppearanceTheme+CoreDataExtensions.swift in Sources */,
 				6BE6664F20C3F68C00162872 /* Campaign+CoreDataClass.swift in Sources */,
 				6BE6662D20C3F67500162872 /* PMIDataSource.swift in Sources */,
