@@ -16,7 +16,7 @@ enum CategoryButtonType: String {
     case typeClothes = "clothes"
 }
 
-class CategoriesViewController: BaseViewController {
+class CategoriesViewController: ReportViewController {
     
     @IBOutlet weak var musicCategoryButton: UIButton!
     @IBOutlet weak var foodCategoryButton: UIButton!
@@ -32,15 +32,14 @@ class CategoriesViewController: BaseViewController {
         
     }
     
-    
     //MARK: IBactions
     
     @IBAction private func buttonAction(sender: UIButton) {
-        
         let VCIdentifier: String = GameViewController.nameOfClass
         let gameVC: GameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: VCIdentifier) as! GameViewController
         gameVC.questions = jsonObjectsArrayByButtonType(button: sender)
         gameVC.gameType = selectedType
+        gameVC.report = self.report
         navigationController?.pushViewController( gameVC, animated: true)
     }
     

@@ -10,79 +10,35 @@ import UIKit
 import SwiftyJSON
 import CoreData
 
-enum ChannelType : String {
+enum Team : Int {
     case POS
-    case Souk
-    case CoffeeShops
-    case Festivals
-    case WorldCup
-    case Universities
-    case LAMP
+    case CS
+    
+    func reportStringValue() -> String {
+        switch self {
+        case .POS: return "POS team"
+        case .CS: return "CS team"
+        }
+    }
 }
 
-enum AppLanguage : String {
-    case French
-    case Arabic
+enum Difficulty: Int {
+    case OnePack
+    case TwoPacks
+    case ThreePacks
+    
+    func reportStringValue() -> String {
+        switch self {
+        case .OnePack: return "One Pack"
+        case .TwoPacks: return "Two Packs"
+        case .ThreePacks: return "Three Packs"
+        }
+    }
 }
 
 class DataStoreManager: NSObject {
 
     static let sharedInstance = DataStoreManager()
-
-    var selectedAppLanguage : AppLanguage {
-        get {
-            let value = UserDefaults.standard.string(forKey: "AppLanguage")
-            if (value == nil) {
-                UserDefaults.standard.set(AppLanguage.French.rawValue, forKey: "AppLanguage")
-                UserDefaults.standard.synchronize()
-                return AppLanguage(rawValue: UserDefaults.standard.string(forKey: "AppLanguage")!)!
-                
-            }
-            return AppLanguage(rawValue: value!)!
-        }
-        set(v) {
-            UserDefaults.standard.set(v.rawValue, forKey: "AppLanguage")
-            UserDefaults.standard.synchronize()
-            
-            self.updateSelectedChannel()
-        }
-    }
-    
-    var selectedCity : String {
-        get {
-            let value = UserDefaults.standard.string(forKey: "SelectedCity")
-            if (value == nil) {
-                UserDefaults.standard.set("Marrakesh", forKey: "SelectedCity")
-                UserDefaults.standard.synchronize()
-                return UserDefaults.standard.string(forKey: "SelectedCity")!
-                
-            }
-            return value!
-        }
-        set(v) {
-            UserDefaults.standard.set(v, forKey: "SelectedCity")
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    var selectedChannelType : ChannelType {
-        get {
-            let value = UserDefaults.standard.string(forKey: "ChannelType")
-            if (value == nil) {
-                UserDefaults.standard.set(ChannelType.Souk.rawValue, forKey: "ChannelType")
-                UserDefaults.standard.synchronize()
-                return ChannelType(rawValue: UserDefaults.standard.string(forKey: "ChannelType")!)!
-                
-            }
-            return ChannelType(rawValue: value!)!
-        }
-        set(v) {
-            UserDefaults.standard.set(v.rawValue, forKey: "ChannelType")
-            UserDefaults.standard.synchronize()
-            
-            self.updateSelectedChannel()
-        }
-    }
     
     // MARK: CoreData Stack
     
@@ -104,13 +60,12 @@ class DataStoreManager: NSObject {
         super.init()
         
         self.setupCoreDataStack()
-        self.updateSelectedChannel()
     }
     
     //MARK: Setup
     
     private func setupCoreDataStack() {
-        guard let modelURL = Bundle.main.url(forResource: "NN", withExtension: "momd") else {
+        guard let modelURL = Bundle.main.url(forResource: "HeritageLog", withExtension: "momd") else {
             fatalError("Error loading model from bundle")
         }
         
@@ -125,7 +80,7 @@ class DataStoreManager: NSObject {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docURL = urls[urls.endIndex - 1]
         
-        let storeURL = docURL.appendingPathComponent("NN.sqlite")
+        let storeURL = docURL.appendingPathComponent("HeritageLog.sqlite")
         
         let opt: Dictionary<String, Bool> = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption : true]
         
@@ -140,21 +95,8 @@ class DataStoreManager: NSObject {
     
     func createNewReportEntity() -> Report {
         let report: Report = NSEntityDescription.insertNewObject(forEntityName: Report.entityName(), into: self.managedObjectContext) as! Report
-        report.app = "NN"
+        report.app = "Heritage"
         return report
     }
     
-    //MARK: Private Methods
-    
-    private func updateSelectedChannel() {
-        let fileName : String = String(format: "%@_%@", self.selectedChannelType.rawValue.lowercased(), self.selectedAppLanguage.rawValue.lowercased())
-        let file = Bundle.main.url(forResource: fileName, withExtension: "json")
-        let data = try! Data(contentsOf: file!)
-        let json = try! JSON(data: data)
-        
-        let channel : Channel = Channel(dictionary: json)
-        self.selectedChannel = channel
-    }
-    
-    private(set) var selectedChannel : Channel?
 }

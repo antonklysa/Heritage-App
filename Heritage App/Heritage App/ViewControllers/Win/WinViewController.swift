@@ -8,12 +8,19 @@
 
 import UIKit
 
-class WinViewController: BaseViewController {
+class WinViewController: ReportViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.report.time = NSDate()
+        DataStoreManager.sharedInstance.saveContext()
+    }
+    
     //MARK: Actions
 
     @IBAction func finishButtonAction(_ sender: Any) {

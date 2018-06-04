@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class HomeViewController: ReportViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,7 @@ class HomeViewController: BaseViewController {
     
     @IBAction func startButtonAction(_ sender: Any) {
         let vc: CategoriesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: CategoriesViewController.self)) as! CategoriesViewController
+        vc.report = self.report
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

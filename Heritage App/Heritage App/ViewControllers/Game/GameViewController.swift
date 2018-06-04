@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class GameViewController: BaseViewController {
+class GameViewController: ReportViewController {
     
     var questions: [Question]!
     var gameType: CategoryButtonType!
@@ -204,6 +204,7 @@ class GameViewController: BaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
 
             let vc: WinViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: WinViewController.self)) as! WinViewController
+            vc.report = self!.report
             self?.navigationController?.pushViewController(vc, animated: true)
             UIApplication.shared.endIgnoringInteractionEvents()
         }
@@ -215,6 +216,7 @@ class GameViewController: BaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
 
             let vc: LoseViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoseViewController.self)) as! LoseViewController
+            vc.report = self!.report
             self?.navigationController?.pushViewController(vc, animated: true)
             UIApplication.shared.endIgnoringInteractionEvents()
         }

@@ -34,16 +34,13 @@ extension Report {
     func dictFromReport() -> [String : Any] {
         var reportDict : [String : Any] = [:]
         reportDict["App"] = self.app
-        reportDict["Language"] = self.language
         reportDict["Channel"] = self.channel
-        reportDict["Level"] = self.level
-        reportDict["SelectedCard"] = String(self.selectedCardIndex)
-        reportDict["City"] = self.city
+        reportDict["Team"] = self.team
         
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        if let time: Date = self.time {
-            reportDict["Time"] = dateFormatter.string(from: time)
+        if let time: NSDate = self.time {
+            reportDict["Time"] = dateFormatter.string(from: time as Date)
         } else {
             reportDict["Time"] = "Unknown"
         }
@@ -52,7 +49,7 @@ extension Report {
     }
     
     func isValidReport() -> Bool {
-        if (self.app != nil && self.language != nil && self.channel != nil && self.level != nil && self.time != nil) {
+        if (self.app != nil && self.channel != nil && self.team != nil && self.time != nil) {
             return true
         } else {
             return false

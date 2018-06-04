@@ -8,19 +8,26 @@
 
 import UIKit
 
-class SelectCampaignViewController: BaseViewController {
+class SelectCampaignViewController: ReportViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.report = DataStoreManager.sharedInstance.createNewReportEntity()
+    }
+    
     //MARK: Actions
     
     @IBAction func campaignButtonAction(_ sender: UIButton) {
-//        let selectedCampaign: HeritageCampaign = HeritageCampaign(rawValue: sender.tag)!
-//        PMISessionManager.defaultManager.teamName = selectedCampaign.apiTitle()
+        let team: Team = Team(rawValue: sender.tag)!
+        self.report.team = team.reportStringValue()
         
         let vc: SelectDifficultyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectDifficultyViewController.self)) as! SelectDifficultyViewController
+        vc.report = self.report
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
