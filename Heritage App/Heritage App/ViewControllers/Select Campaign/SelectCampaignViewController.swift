@@ -17,10 +17,10 @@ class SelectCampaignViewController: BaseViewController {
     //MARK: Actions
     
     @IBAction func campaignButtonAction(_ sender: UIButton) {
-        let selectedCampaign: HeritageCampaign = HeritageCampaign(rawValue: sender.tag)!
-        PMISessionManager.defaultManager.teamName = selectedCampaign.apiTitle()
+//        let selectedCampaign: HeritageCampaign = HeritageCampaign(rawValue: sender.tag)!
+//        PMISessionManager.defaultManager.teamName = selectedCampaign.apiTitle()
         
-        let vc: LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoginViewController.self)) as! LoginViewController
+        let vc: SelectDifficultyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectDifficultyViewController.self)) as! SelectDifficultyViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

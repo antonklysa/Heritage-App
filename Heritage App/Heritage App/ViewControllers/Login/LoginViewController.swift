@@ -19,7 +19,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        // TESTING
+        // TE                                                                                       TING
         if TARGET_OS_SIMULATOR != 0 && self.usernameTextField.text!.count == 0 {
             UIApplication.shared.keyWindow!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectDifficultyViewController.self))
             return

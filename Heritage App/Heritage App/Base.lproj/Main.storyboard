@@ -557,7 +557,7 @@
         <!--Select Difficulty View Controller-->
         <scene sceneID="fMS-HL-OYu">
             <objects>
-                <viewController id="cj4-8S-tRO" customClass="SelectDifficultyViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectDifficultyViewController" id="cj4-8S-tRO" customClass="SelectDifficultyViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ef9-jE-iwb">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -746,7 +746,7 @@
         <!--Credentianls View Controller-->
         <scene sceneID="FfX-7k-ygy">
             <objects>
-                <viewController storyboardIdentifier="CredentianlsViewController" id="klX-Mz-qxI" customClass="CredentianlsViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CredentianlsViewController" id="klX-Mz-qxI" customClass="CredentianlsViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cOa-sl-adu">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -797,7 +797,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CredentialsCell" rowHeight="124" id="4pb-GY-d59" customClass="CredentialsCell" customModule="MusicApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CredentialsCell" rowHeight="124" id="4pb-GY-d59" customClass="CredentialsCell" customModule="Heritage_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="843" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4pb-GY-d59" id="fTn-X2-33S">
@@ -1360,23 +1360,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pej-Se-UVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2538" y="-1413"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Odd-wo-uc7">
-            <objects>
-                <navigationController storyboardIdentifier="SelectDifficultyViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Wh9-fF-m2r" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1jy-fb-cyJ">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cj4-8S-tRO" kind="relationship" relationship="rootViewController" id="dnH-f7-3p7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fYH-GL-jYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-403" y="-1413"/>
         </scene>
     </scenes>
     <resources>
