@@ -865,7 +865,7 @@
                                     <color key="titleColor" red="0.84313725490000002" green="0.094117647060000004" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonAction:" destination="YWf-Cr-M0I" eventType="touchUpInside" id="TIg-Uc-BR9"/>
+                                    <action selector="backButtonAction:" destination="YWf-Cr-M0I" eventType="touchUpInside" id="Kp3-1Y-3TU"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rok-EK-1aS">
@@ -964,7 +964,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9Z-SW-N1Z">
                                 <rect key="frame" x="54" y="677" width="152" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Heritage AppV 1.0</string>
+                                <string key="text">Heritage App
+V 1.0</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1004,7 +1005,7 @@
         <image name="Win_bkg" width="1024" height="768"/>
         <image name="background" width="1024" height="768"/>
         <image name="categories_title_image" width="542" height="63"/>
-        <image name="clothes_image" width="286" height="392"/>
+        <image name="clothes_image" width="246" height="352"/>
         <image name="config_back" width="19" height="28"/>
         <image name="config_background" width="1024" height="768"/>
         <image name="credentials" width="134" height="25"/>

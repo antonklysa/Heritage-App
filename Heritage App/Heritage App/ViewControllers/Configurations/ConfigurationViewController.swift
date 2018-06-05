@@ -105,6 +105,11 @@ class ConfigurationViewController: BaseViewController {
     
     @IBAction func syncButtonAction(_ sender: Any) {
     }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension ConfigurationViewController : UITextFieldDelegate {

@@ -59,6 +59,7 @@ class GameViewController: ReportViewController {
         }) { (flag) in
             self.labelImageViewTopConstraint.constant = 83
             UIView.animate(withDuration: 0.75, delay: 1.0, options: .curveEaseInOut, animations: { [weak self] in
+                self?.labelImageView.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
                 self?.view.layoutIfNeeded()
                 }, completion: { (flag) in
                     UIView.animate(withDuration: 0.75, delay: 0.75, options: .curveEaseInOut, animations: { [weak self] in
@@ -120,6 +121,10 @@ class GameViewController: ReportViewController {
     
     private func checkQuestion(question: Question, imageView: UIImageView) {
         let answerView: UIView = createAnswerView(withTrueType: question.isRightAnswer?.intValue == 1 ? true : false)
+        answerView.alpha = 0.0
+        UIView.animate(withDuration: 0.5) {
+            answerView.alpha = 1.0
+        }
         imageView.addSubview(answerView)
         answerView.translatesAutoresizingMaskIntoConstraints = false
         answerView.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
