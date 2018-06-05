@@ -13,227 +13,112 @@ import ActionSheetPicker_3_0
 
 class ConfigurationViewController: BaseViewController {
 
+    @IBOutlet weak var touchpointKaButton: UIButton!
+    @IBOutlet weak var touchpointPosButton: UIButton!
     @IBOutlet weak var lastSyncLabel: UILabel!
-    @IBOutlet weak var hostIdlabel: UILabel!
-    @IBOutlet weak var campaignNameLabel: UILabel!
-    @IBOutlet weak var sessionIDLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var loggedInAsLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var currentChannelLabel: UILabel!
-    @IBOutlet weak var channelsTableView: UITableView!
-
-    @IBOutlet weak var appNameLabel: UILabel!
-    @IBOutlet weak var appVersionLabel: UILabel!
+    @IBOutlet weak var citySelectedLabel: UILabel!
+    @IBOutlet weak var hostNameTextField: UITextField!
     
     //MARK: UIViewController Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.containerView.layer.cornerRadius = 6.0
-        
-        self.setupInfoLabels()
-        self.updateUIForActiveCampaign()
-    }
-    
-    
-    //MARK: Setup
-    
-    func setupInfoLabels() {
-        let versionString = String(format:"V%@(%@)", (Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String)!, (Bundle.main.infoDictionary?["CFBundleVersion"]  as? String)!)
-        self.appVersionLabel.text = versionString
-        
-        self.appNameLabel.text = "Chesterfield Heritage App"
-    }
-    
-    func updateUIForActiveCampaign() {
-        let campaign : Campaign? = PMIDataSource.defaultDataSource.activeCampaign()
-        if (campaign != nil) {
-            self.hostIdlabel.text = PMISessionManager.defaultManager.hostessId
-            self.loggedInAsLabel.text = PMISessionManager.defaultManager.name
-            self.cityLabel.text = campaign?.city
-            self.sessionIDLabel.text = campaign?.sessionid
-            self.campaignNameLabel.text = campaign?.name
-            
-            let lastUpdate : Date? = PMIDataSource.defaultDataSource.lastUpdate
-            if (lastUpdate != nil) {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd hh:mm a"
-                formatter.amSymbol = "AM"
-                formatter.pmSymbol = "PM"
-                let lastSyncString = formatter.string(from: lastUpdate!)
-                self.lastSyncLabel.text = lastSyncString
+        if let currentTeam: Team = DataStoreManager.sharedInstance.team {
+            if currentTeam == Team.CS {
+                self.touchpointPosButton.isSelected = false
+                self.touchpointKaButton.isSelected = true
+            } else if currentTeam == Team.POS {
+                self.touchpointPosButton.isSelected = true
+                self.touchpointKaButton.isSelected = false
             }
-
-            if let channelName: String = PMIDataSource.defaultDataSource.activeCampaign()?.activeScenario?.scenarioName {
-                self.currentChannelLabel.text = channelName
-            }
-        } else {
-            self.hostIdlabel.text = ""
-            self.loggedInAsLabel.text = ""
-            self.cityLabel.text = ""
-            self.sessionIDLabel.text = ""
-            self.campaignNameLabel.text = ""
-            self.lastSyncLabel.text = ""
-            self.currentChannelLabel.text = ""
         }
         
-        self.channelsTableView.isHidden = true
-        self.channelsTableView.reloadData()
+        self.citySelectedLabel.text = DataStoreManager.sharedInstance.cityName
         
-//        if (PMISessionManager.defaultManager == "LAMP") {
-//            self.loggedInAsLabel.isHidden = true
-//            self.nameLabel.isHidden = true
-//        }
+        if let lastSyncDate: NSDate = DataStoreManager.sharedInstance.syncDate {
+            let dateFormatter: DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            self.lastSyncLabel.text = dateFormatter.string(from: lastSyncDate as Date)
+        } else {
+            self.lastSyncLabel.text = "-"
+        }
+    }
+    
+    private func selectTeam(_ team: Team) {
+        if (team == .POS) {
+            self.touchpointPosButton.isSelected = true
+            self.touchpointKaButton.isSelected = false
+        } else {
+            self.touchpointPosButton.isSelected = false
+            self.touchpointKaButton.isSelected = true
+        }
+        
+        DataStoreManager.sharedInstance.team = team
     }
     
     //MARK: Actions
     
-    @IBAction func disconnectButtonAction(_ sender: Any) {
-        let alertController = UIAlertController(title: "Êtes vous sûrs de vouloir déconnecter cet utilisateur ?", message: "", preferredStyle: .alert)
-
-        let disconnectAction = UIAlertAction(title: "Déconnecter", style: .default, handler: { alert -> Void in
+    @IBAction func touchpointButtonAction(_ sender: UIButton) {
+        let team: Team = Team(rawValue: sender.tag)!
+        self.selectTeam(team)
+    }
+    
+    @IBAction func selectCityButtonAction(_ sender: UIButton) {
+        let delegateOptions = ["Casablanca",
+                               "Rabat",
+                               "Marrakesh",
+                               "Tanger",
+                               "Fès",
+                               "Agadir",
+                               "Salé",
+                               "Meknès",
+                               "Tétouan",
+                               "Chefchaouen",
+                               "Nador",
+                               "Al hoceima",
+                               "Kénitra",
+                               "El Jadida",
+                               "Oujda",
+                               "Taza",
+                               "Témara",
+                               "Mohammédia",
+                               "Béni Mellal",
+                               "Essaouira",
+                               "Khouribga",
+                               "Safi",
+                               "Nador",
+                               "Ouarzazate",
+                               "Settat",
+                               "Larache",
+                               "Ifran",
+                               "Errachidia"]
+        ActionSheetStringPicker.show(withTitle: "Choose a city :", rows: delegateOptions, initialSelection: 0, doneBlock: {
+            picker, index, selectedValue in
             
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            DataStoreManager.sharedInstance.cityName = selectedValue as! String
+            self.citySelectedLabel.text = selectedValue as! String
             
-            PMISessionManager.defaultManager.disconnect(completion: { (error) in
-                MBProgressHUD.hide(for: self.view, animated: true)
-                
-                if (error == nil) {
-                    self.view.window!.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: SelectCampaignViewController.self)) as! SelectCampaignViewController
-                } else {
-                    let alertController = UIAlertController(title: "Error.", message: "Something went wrong, please try again.", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alertController.addAction(okAction)
-                    self.present(alertController, animated: true, completion: nil)
-                }
-            })
-        })
-
-        let cancelAction = UIAlertAction(title: "Annuler", style: .default, handler: nil)
-
-        alertController.addAction(disconnectAction)
-        alertController.addAction(cancelAction)
-
-        self.present(alertController, animated: true, completion: nil)
+            return
+        }, cancel: { ActionStringCancelBlock in return }, origin: sender)
     }
     
-    @IBAction func syncButtonAction(_ sender: UIButton) {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-
-        PMISessionManager.defaultManager.syncDistributedGifts { (campaignDict, error) in
-            if (campaignDict != nil && error == nil) {
-                PMIDataSource.defaultDataSource.updateActiveCampaign(campaignDict: campaignDict!, completion: { (error) in
-                    MBProgressHUD.hide(for: self.view, animated: false)
-                    
-                    if (error == nil) {
-                        let alertController = UIAlertController(title: "Synchronisation effectuée avec succès.", message: "", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alertController.addAction(okAction)
-                        self.present(alertController, animated: true, completion: nil)
-                    } else {
-                        let alertController = UIAlertController(title: "Error.", message: error?.localizedDescription, preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alertController.addAction(okAction)
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                    
-                    self.updateUIForActiveCampaign()
-                })
-            } else {
-                MBProgressHUD.hide(for: self.view, animated: false)
-
-                let alertController = UIAlertController(title: "Error.", message: error!.localizedDescription, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
-        
-//        let file = Bundle.main.url(forResource: "campaigns", withExtension: "json")
-//        let data = try! Data(contentsOf: file!)
-//        let json = try! JSON(data: data)
-//        PMIDataSource.defaultDataSource.updateActiveCampaign(campaignDict: json) { (error) in
-//            MBProgressHUD.hide(for: self.view, animated: false)
-//
-//            if (error == nil) {
-//                let alertController = UIAlertController(title: "Synchronisation effectuée avec succès.", message: "", preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//                alertController.addAction(okAction)
-//                self.present(alertController, animated: true, completion: nil)
-//            } else {
-//                let alertController = UIAlertController(title: "Error.", message: error?.localizedDescription, preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//                alertController.addAction(okAction)
-//                self.present(alertController, animated: true, completion: nil)
-//            }
-//
-//            self.updateUIForActiveCampaign()
-//        }
+    @IBAction func syncButtonAction(_ sender: Any) {
     }
-    
-    @IBAction func backButtonAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func distributedGiftsHistoryButtonAction(_ sender: Any) {
-        let vc: DistributedGiftsHistoryViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DistributedGiftsHistoryViewController") as! DistributedGiftsHistoryViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func selectChannelButtonAction(_ sender: UIButton) {
-        self.channelsTableView.isHidden = !self.channelsTableView.isHidden
-    }
-    
 }
 
-extension ConfigurationViewController : UITableViewDataSource, UITableViewDelegate {
+extension ConfigurationViewController : UITextFieldDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let activeCampaign: Campaign = PMIDataSource.defaultDataSource.activeCampaign() {
-            return activeCampaign.sortedScenarios().count
-        } else {
-            return 0
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let hostName: String = textField.text {
+            DataStoreManager.sharedInstance.hostName = hostName
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ChannelTableViewCell.self)) as? ChannelTableViewCell else {
-            fatalError("Unexpected Index Path")
-        }
-        let activeCampaign: Campaign = PMIDataSource.defaultDataSource.activeCampaign()!
-        let scenario: Scenario = activeCampaign.sortedScenarios()[indexPath.row]
-        cell.channel = scenario
-        if PMIDataSource.defaultDataSource.activeCampaign()!.activeScenario != nil {
-            let isActiveScenario: Bool = (PMIDataSource.defaultDataSource.activeCampaign()!.activeScenario!.scenarioName! == scenario.scenarioName!)
-            if (isActiveScenario) {
-                cell.backgroundColor = UIColor(red: 215.0/255.0, green: 24.0/255.0, blue: 42.0/255.0, alpha: 1.0)
-                cell.channelNameLabel.textColor = UIColor.white
-            } else {
-                cell.backgroundColor = UIColor.white
-                cell.channelNameLabel.textColor = UIColor.black
-            }
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
         
-        if let activeCampaign: Campaign = PMIDataSource.defaultDataSource.activeCampaign() {
-            let listOfChannels: [Scenario] = activeCampaign.sortedScenarios()
-            let scenario: Scenario = listOfChannels[indexPath.row]
-            
-            PMIDataSource.defaultDataSource.activeCampaign()!.activeScenario = scenario
-            PMISessionManager.defaultManager.selectedChannelId = scenario.channelId
-            
-            self.updateUIForActiveCampaign()
-        }
-        
+        return true
     }
+    
 }

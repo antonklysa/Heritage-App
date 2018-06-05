@@ -11,8 +11,8 @@ import SwiftyJSON
 import CoreData
 
 enum Team : Int {
-    case POS
     case CS
+    case POS
     
     func reportStringValue() -> String {
         switch self {
@@ -23,12 +23,14 @@ enum Team : Int {
 }
 
 enum Difficulty: Int {
+    case OneStick
     case OnePack
     case TwoPacks
     case ThreePacks
     
     func reportStringValue() -> String {
         switch self {
+        case .OneStick: return "One Stick"
         case .OnePack: return "One Pack"
         case .TwoPacks: return "Two Packs"
         case .ThreePacks: return "Three Packs"
@@ -39,6 +41,80 @@ enum Difficulty: Int {
 class DataStoreManager: NSObject {
 
     static let sharedInstance = DataStoreManager()
+    
+    var team : Team? {
+        get {
+            let value: Int? =  UserDefaults.standard.object(forKey: "team") as? Int
+            if (value == nil) {
+                return Team.CS
+            }
+            return Team(rawValue: value!)
+        }
+        
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue?.rawValue, forKey: "team")
+            defaults.synchronize()
+        }
+    }
+    
+    var difficulty : Difficulty? {
+        get {
+            let value: Int? =  UserDefaults.standard.object(forKey: "difficulty") as? Int
+            if (value == nil) {
+                return Difficulty.OnePack
+            }
+            return Difficulty(rawValue: value!)
+        }
+        
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue?.rawValue, forKey: "difficulty")
+            defaults.synchronize()
+        }
+    }
+    
+    var hostName : String? {
+        get {
+            let value: String? =  UserDefaults.standard.object(forKey: "hostName") as? String
+            return value
+        }
+        
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: "hostName")
+            defaults.synchronize()
+        }
+    }
+    
+    var cityName : String? {
+        get {
+            let value: String? =  UserDefaults.standard.object(forKey: "cityName") as? String
+            if value == nil {
+                return "Casablanca"
+            }
+            return value
+        }
+        
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: "cityName")
+            defaults.synchronize()
+        }
+    }
+    
+    var syncDate : NSDate? {
+        get {
+            let value: NSDate? =  UserDefaults.standard.object(forKey: "date") as? NSDate
+            return value
+        }
+        
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: "date")
+            defaults.synchronize()
+        }
+    }
     
     // MARK: CoreData Stack
     
