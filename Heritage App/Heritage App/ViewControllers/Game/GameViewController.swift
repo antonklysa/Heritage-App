@@ -20,7 +20,7 @@ class GameViewController: ReportViewController {
     @IBOutlet weak var countOfRightAnswersLabel: UILabel!
     
     private var player : AVAudioPlayer?
-
+    
     private var countOfAttempts: Int = 0
     private var seconds: Double = 30.0
     private var countOfRightAnswers: Int = 0
@@ -142,6 +142,13 @@ class GameViewController: ReportViewController {
         countOfAttempts += 1
         countOfAttemptsLabel.text = "\(countOfAttempts)/5"
         
+        //premature lose
+        if (countOfAttempts == 3 && countOfRightAnswers == 0) || (countOfAttempts == 4 && countOfRightAnswers == 1) {
+            loseAction()
+            timer.invalidate()
+            return
+        }
+        
         if countOfRightAnswers == 3 {
             winAction()
             timer.invalidate()
@@ -199,26 +206,20 @@ class GameViewController: ReportViewController {
     }
     
     private func winAction() {
-        UIApplication.shared.beginIgnoringInteractionEvents()
         print("------- W I N -------")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-
+        DispatchQueue.main.async { [weak self] in
             let vc: WinViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: WinViewController.self)) as! WinViewController
             vc.report = self!.report
             self?.navigationController?.pushViewController(vc, animated: true)
-            UIApplication.shared.endIgnoringInteractionEvents()
         }
     }
     
     private func loseAction() {
-        UIApplication.shared.beginIgnoringInteractionEvents()
         print("------- L O S E -------")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-
+        DispatchQueue.main.async { [weak self] in
             let vc: LoseViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoseViewController.self)) as! LoseViewController
             vc.report = self!.report
             self?.navigationController?.pushViewController(vc, animated: true)
-            UIApplication.shared.endIgnoringInteractionEvents()
         }
     }
 }
