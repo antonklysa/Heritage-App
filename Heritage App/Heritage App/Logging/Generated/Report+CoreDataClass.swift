@@ -2,7 +2,7 @@
 //  Report+CoreDataClass.swift
 //  Heritage App
 //
-//  Created by Yaroslav Brekhunchenko on 6/4/18.
+//  Created by Yaroslav Brekhunchenko on 6/6/18.
 //  Copyright © 2018 Anton Klysa. All rights reserved.
 //
 //

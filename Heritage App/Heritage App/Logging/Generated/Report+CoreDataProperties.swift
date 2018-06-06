@@ -2,7 +2,7 @@
 //  Report+CoreDataProperties.swift
 //  Heritage App
 //
-//  Created by Yaroslav Brekhunchenko on 6/4/18.
+//  Created by Yaroslav Brekhunchenko on 6/6/18.
 //  Copyright © 2018 Anton Klysa. All rights reserved.
 //
 //
@@ -18,8 +18,11 @@ extension Report {
     }
 
     @NSManaged public var app: String?
-    @NSManaged public var team: String?
     @NSManaged public var channel: String?
+    @NSManaged public var team: String?
     @NSManaged public var time: NSDate?
+    @NSManaged public var hostName: String?
+    @NSManaged public var themeSelected: String?
+    @NSManaged public var city: String?
 
 }

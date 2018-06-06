@@ -18,6 +18,9 @@
 		3A4CAEFD20BEAC7A00021363 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CAEFB20BEAC7A00021363 /* Question.swift */; };
 		3A4CAF0420BFFB6B00021363 /* PTSansNarrowBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CAF0320BFFB6B00021363 /* PTSansNarrowBold.ttf */; };
 		449CA2109A1650614244DB39 /* Pods_Heritage_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A06D93855248AB1B403826 /* Pods_Heritage_App.framework */; };
+		6B025C8D20C7DB1B00B4C798 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B025C8C20C7DB1B00B4C798 /* GoogleService-Info.plist */; };
+		6B025C9020C7DBE200B4C798 /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B025C8E20C7DBE200B4C798 /* Report+CoreDataClass.swift */; };
+		6B025C9120C7DBE200B4C798 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B025C8F20C7DBE200B4C798 /* Report+CoreDataProperties.swift */; };
 		6B0C723C20C0698100AB904C /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C723B20C0698100AB904C /* WinViewController.swift */; };
 		6B0C723F20C0699200AB904C /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C723E20C0699200AB904C /* LoseViewController.swift */; };
 		6B0C724220C069AE00AB904C /* SelectCampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C724120C069AE00AB904C /* SelectCampaignViewController.swift */; };
@@ -26,8 +29,6 @@
 		6B41ACA820C593C700BBBDA0 /* HeritageLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B41ACA520C593C700BBBDA0 /* HeritageLog.xcdatamodeld */; };
 		6B41ACA920C593C700BBBDA0 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41ACA720C593C700BBBDA0 /* DataStoreManager.swift */; };
 		6B41ACB120C593E200BBBDA0 /* Report+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41ACB020C593E200BBBDA0 /* Report+Extensions.swift */; };
-		6B41ACB420C596A900BBBDA0 /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41ACB220C596A900BBBDA0 /* Report+CoreDataClass.swift */; };
-		6B41ACB520C596A900BBBDA0 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41ACB320C596A900BBBDA0 /* Report+CoreDataProperties.swift */; };
 		6B41ACB820C5975A00BBBDA0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41ACB720C5975A00BBBDA0 /* ReportViewController.swift */; };
 		6BE6662620C3F66400162872 /* PMISessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6662420C3F66400162872 /* PMISessionManager.swift */; };
 		6BE6662720C3F66400162872 /* DownloadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6662520C3F66400162872 /* DownloadImageOperation.swift */; };
@@ -54,6 +55,9 @@
 		3A4CAEFB20BEAC7A00021363 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3A4CAF0320BFFB6B00021363 /* PTSansNarrowBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTSansNarrowBold.ttf; sourceTree = "<group>"; };
 		56CCD75EDB9FDF14211BA0E6 /* Pods-Heritage App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heritage App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heritage App/Pods-Heritage App.release.xcconfig"; sourceTree = "<group>"; };
+		6B025C8C20C7DB1B00B4C798 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6B025C8E20C7DBE200B4C798 /* Report+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6B025C8F20C7DBE200B4C798 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6B0C723B20C0698100AB904C /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		6B0C723E20C0699200AB904C /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		6B0C724120C069AE00AB904C /* SelectCampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCampaignViewController.swift; sourceTree = "<group>"; };
@@ -62,8 +66,6 @@
 		6B41ACA620C593C700BBBDA0 /* NN.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NN.xcdatamodel; sourceTree = "<group>"; };
 		6B41ACA720C593C700BBBDA0 /* DataStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		6B41ACB020C593E200BBBDA0 /* Report+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+Extensions.swift"; sourceTree = "<group>"; };
-		6B41ACB220C596A900BBBDA0 /* Report+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6B41ACB320C596A900BBBDA0 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6B41ACB720C5975A00BBBDA0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		6BE6662420C3F66400162872 /* PMISessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMISessionManager.swift; sourceTree = "<group>"; };
 		6BE6662520C3F66400162872 /* DownloadImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageOperation.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				6B41ACA420C593BA00BBBDA0 /* Logging */,
 				3A4CAEE220BEA11600021363 /* Main.storyboard */,
 				3A4CAEE520BEA11800021363 /* Assets.xcassets */,
+				6B025C8C20C7DB1B00B4C798 /* GoogleService-Info.plist */,
 				3A4CAEF720BEAA9000021363 /* Resources */,
 				3A4CAEE720BEA11800021363 /* LaunchScreen.storyboard */,
 				3A4CAEEA20BEA11800021363 /* Info.plist */,
@@ -264,8 +267,8 @@
 		6B41ACAB20C593D500BBBDA0 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				6B41ACB220C596A900BBBDA0 /* Report+CoreDataClass.swift */,
-				6B41ACB320C596A900BBBDA0 /* Report+CoreDataProperties.swift */,
+				6B025C8E20C7DBE200B4C798 /* Report+CoreDataClass.swift */,
+				6B025C8F20C7DBE200B4C798 /* Report+CoreDataProperties.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				3A4CAF0420BFFB6B00021363 /* PTSansNarrowBold.ttf in Resources */,
 				3A4CAEE920BEA11800021363 /* LaunchScreen.storyboard in Resources */,
 				3A4CAEE620BEA11800021363 /* Assets.xcassets in Resources */,
+				6B025C8D20C7DB1B00B4C798 /* GoogleService-Info.plist in Resources */,
 				6BE6665620C3F84700162872 /* wrong.wav in Resources */,
 				3A4CAEFA20BEAB2700021363 /* package_json.json in Resources */,
 				3A4CAEE420BEA11600021363 /* Main.storyboard in Resources */,
@@ -479,6 +483,7 @@
 				6BE6662620C3F66400162872 /* PMISessionManager.swift in Sources */,
 				6B41ACB820C5975A00BBBDA0 /* ReportViewController.swift in Sources */,
 				6BE6662720C3F66400162872 /* DownloadImageOperation.swift in Sources */,
+				6B025C9120C7DBE200B4C798 /* Report+CoreDataProperties.swift in Sources */,
 				6BE6666820C3FBA000162872 /* ConfigurationViewController.swift in Sources */,
 				3A4CAEF420BEA1E200021363 /* CategoriesViewController.swift in Sources */,
 				6B0C723F20C0699200AB904C /* LoseViewController.swift in Sources */,
@@ -487,7 +492,6 @@
 				6B0C724A20C06CED00AB904C /* HomeViewController.swift in Sources */,
 				6BE6665D20C3FA5500162872 /* CredentialsCell.swift in Sources */,
 				6B41ACA820C593C700BBBDA0 /* HeritageLog.xcdatamodeld in Sources */,
-				6B41ACB520C596A900BBBDA0 /* Report+CoreDataProperties.swift in Sources */,
 				6B0C723C20C0698100AB904C /* WinViewController.swift in Sources */,
 				6BE6662F20C3F67500162872 /* String+Extensions.swift in Sources */,
 				3A4CAEF220BEA17E00021363 /* BaseVIewController.swift in Sources */,
@@ -495,7 +499,7 @@
 				6B0C724520C06AF000AB904C /* SelectDifficultyViewController.swift in Sources */,
 				3A4CAEDF20BEA11600021363 /* AppDelegate.swift in Sources */,
 				6B41ACA920C593C700BBBDA0 /* DataStoreManager.swift in Sources */,
-				6B41ACB420C596A900BBBDA0 /* Report+CoreDataClass.swift in Sources */,
+				6B025C9020C7DBE200B4C798 /* Report+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

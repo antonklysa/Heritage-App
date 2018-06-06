@@ -96,8 +96,8 @@ class ConfigurationViewController: BaseViewController {
         ActionSheetStringPicker.show(withTitle: "Choose a city :", rows: delegateOptions, initialSelection: 0, doneBlock: {
             picker, index, selectedValue in
             
-            DataStoreManager.sharedInstance.cityName = selectedValue as! String
-            self.citySelectedLabel.text = selectedValue as! String
+            DataStoreManager.sharedInstance.cityName = selectedValue as? String
+            self.citySelectedLabel.text = selectedValue as? String
             
             return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender)

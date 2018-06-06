@@ -40,6 +40,13 @@ class CategoriesViewController: ReportViewController {
         gameVC.questions = jsonObjectsArrayByButtonType(button: sender)
         gameVC.gameType = selectedType
         gameVC.report = self.report
+        if sender.isEqual(musicCategoryButton) {
+            self.report.themeSelected = "Instruments"
+        } else if sender.isEqual(foodCategoryButton)  {
+            self.report.themeSelected = "Food"
+        } else if sender.isEqual(clothesCategoryButton) {
+            self.report.themeSelected = "Cloathes"
+        }
         navigationController?.pushViewController( gameVC, animated: true)
     }
     
