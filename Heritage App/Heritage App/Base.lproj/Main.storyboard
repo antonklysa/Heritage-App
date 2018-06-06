@@ -424,7 +424,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Win_bkg" translatesAutoresizingMaskIntoConstraints="NO" id="Urb-1D-GLf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Urb-1D-GLf">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK4-mT-CCG">
@@ -463,6 +463,22 @@
                                     <action selector="finishButtonAction:" destination="4fj-He-crX" eventType="touchUpInside" id="F2L-kU-fwj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heritage_text" translatesAutoresizingMaskIntoConstraints="NO" id="MoZ-zm-POD">
+                                <rect key="frame" x="153" y="347" width="718" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="final_win_message_1" translatesAutoresizingMaskIntoConstraints="NO" id="2Bx-IH-Etp">
+                                <rect key="frame" x="121" y="380" width="783" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="final_win_message" translatesAutoresizingMaskIntoConstraints="NO" id="RxM-ru-0iU">
+                                <rect key="frame" x="130" y="364" width="765" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="final_packs" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-eO-G4k">
+                                <rect key="frame" x="360" y="93" width="305" height="255"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -476,6 +492,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dBK-yC-4k7"/>
                     </view>
+                    <connections>
+                        <outlet property="chesterfieldImageView" destination="2Bx-IH-Etp" id="iLi-kN-tUp"/>
+                        <outlet property="disconnectButton" destination="gdP-P9-Eg4" id="4Ed-Dw-UT4"/>
+                        <outlet property="heritageImageView" destination="MoZ-zm-POD" id="g7x-dv-S9K"/>
+                        <outlet property="lastImageView" destination="RxM-ru-0iU" id="3cw-Pv-v3T"/>
+                        <outlet property="packImageView" destination="BFy-eO-G4k" id="Zfb-MG-7aV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agl-45-K8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1002,7 +1025,6 @@ V 1.0</string>
     </scenes>
     <resources>
         <image name="Loose_bkg" width="1024" height="768"/>
-        <image name="Win_bkg" width="1024" height="768"/>
         <image name="background" width="1024" height="768"/>
         <image name="categories_title_image" width="542" height="63"/>
         <image name="clothes_image" width="246" height="352"/>
@@ -1010,7 +1032,11 @@ V 1.0</string>
         <image name="config_background" width="1024" height="768"/>
         <image name="credentials" width="134" height="25"/>
         <image name="cs_campaign" width="254" height="254"/>
+        <image name="final_packs" width="305" height="254"/>
+        <image name="final_win_message" width="620" height="176"/>
+        <image name="final_win_message_1" width="768" height="171"/>
         <image name="food_image" width="286" height="392"/>
+        <image name="heritage_text" width="717" height="73"/>
         <image name="home_background" width="1024" height="768"/>
         <image name="home_start" width="263" height="110"/>
         <image name="ka_deselected" width="107" height="107"/>
