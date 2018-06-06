@@ -16,8 +16,8 @@ enum Team : Int {
     
     func reportStringValue() -> String {
         switch self {
-        case .POS: return "POS team"
-        case .CS: return "CS team"
+        case .POS: return "POS"
+        case .CS: return "Coffee Shop"
         }
     }
 }

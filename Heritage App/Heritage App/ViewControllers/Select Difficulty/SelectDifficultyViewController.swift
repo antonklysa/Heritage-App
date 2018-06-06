@@ -34,6 +34,7 @@ class SelectDifficultyViewController: ReportViewController {
         super.viewWillAppear(animated)
         
         self.report = DataStoreManager.sharedInstance.createNewReportEntity()
+        self.report.team = DataStoreManager.sharedInstance.team!.reportStringValue()
     }
     
     //MARK: Actions

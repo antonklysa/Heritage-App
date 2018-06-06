@@ -35,7 +35,7 @@ extension Report {
         var reportDict : [String : Any] = [:]
         reportDict["Host Name"] = DataStoreManager.sharedInstance.hostName
         reportDict["Theme Selected"] = self.themeSelected
-        reportDict["Touchpoint"] = DataStoreManager.sharedInstance.team!.reportStringValue()
+        reportDict["Touchpoint"] = self.team
         
         reportDict["City"] = DataStoreManager.sharedInstance.cityName
         reportDict["Level"] = self.channel
