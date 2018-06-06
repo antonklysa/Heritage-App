@@ -90,6 +90,7 @@ class GameViewController: ReportViewController {
         for imageView in imagesArray {
             imageView.image = UIImage(named: questions[imagesArray.index(of: imageView)!].imageNameString!)
             imageView.contentMode = .scaleToFill
+            imageView.clipsToBounds = true
             imageView.isUserInteractionEnabled = true
             
             let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
@@ -169,7 +170,7 @@ class GameViewController: ReportViewController {
         
         let answerView: UIView = UIView(frame: .zero)
         let checkImage: UIImageView = UIImageView.init(frame: .zero)
-        checkImage.contentMode = .scaleToFill
+        checkImage.contentMode = .scaleAspectFit
         
         answerView.addSubview(checkImage)
         checkImage.translatesAutoresizingMaskIntoConstraints = false

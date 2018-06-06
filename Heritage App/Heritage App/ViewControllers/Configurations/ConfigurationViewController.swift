@@ -69,7 +69,7 @@ class ConfigurationViewController: BaseViewController {
     @IBAction func selectCityButtonAction(_ sender: UIButton) {
         let delegateOptions = ["Casablanca",
                                "Rabat",
-                               "Marrakesh",
+                               "Marakech",
                                "Tanger",
                                "Fès",
                                "Agadir",

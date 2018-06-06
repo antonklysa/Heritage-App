@@ -28,7 +28,7 @@ class WinViewController: ReportViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 0.75, delay: 0.7, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.75, delay: 1.7, options: UIViewAnimationOptions.curveEaseInOut, animations: {
             self.heritageImageView.alpha = 0
         }) { (flag) in
             UIView.animate(withDuration: 0.75, delay: 1.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
