@@ -78,7 +78,7 @@ class DataStoreManager: NSObject {
         get {
             let value: String? =  UserDefaults.standard.object(forKey: "hostName") as? String
             if value == nil {
-                return ""
+                return "Unknown"
             }
             return value
         }

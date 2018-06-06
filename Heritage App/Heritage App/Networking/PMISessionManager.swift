@@ -32,6 +32,7 @@ class PMISessionManager: NSObject {
     func syncReports(completion:@escaping(Error?) -> ()) {
         let listOfAllReports : [Report] = Report.listOfAllReports()
         if (listOfAllReports.count == 0) {
+            completion(nil)
             return
         }
         
@@ -69,7 +70,7 @@ class PMISessionManager: NSObject {
                 
                 Auth.auth().signInAnonymously(completion: { (user, authError) in
                     if (authError == nil) {
-                        let child : String = String(format : "Report_%@.csv", Auth.auth().currentUser!.uid)
+                        let child : String = String(format : "%@_%@.csv", DataStoreManager.sharedInstance.hostName!, UIDevice.current.identifierForVendor!.uuidString)
                         self.storageRef?.child(child).putFile(from: fileURL, metadata: nil, completion: { (metadata, uploadingError) in
                             completion(uploadingError)
                             DataStoreManager.sharedInstance.syncDate = NSDate()

@@ -48,8 +48,8 @@ class WinViewController: ReportViewController {
             })
         }
         
-//        self.report.time = NSDate()
-//        self.report.isWin = true
+        self.report.time = NSDate()
+        self.report.isWin = true
         DataStoreManager.sharedInstance.saveContext()
     }
     
