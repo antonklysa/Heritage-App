@@ -18,7 +18,7 @@
                 {
                 "id": 3,
                 "image": "music_4",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
                 {
                 "id": 4,
@@ -33,7 +33,7 @@
             {
             "id": 4,
             "image": "music_7",
-            "is_right_answer": 1
+            "is_right_answer": 0
             },
             {
             "id": 4,
