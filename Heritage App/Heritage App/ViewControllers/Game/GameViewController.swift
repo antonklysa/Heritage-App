@@ -57,7 +57,7 @@ class GameViewController: ReportViewController {
         UIView.animate(withDuration: 0.75, delay: 0.0, options: .curveEaseInOut, animations: {  [weak self] in
             self?.labelImageView.alpha = 1
         }) { (flag) in
-            self.labelImageViewTopConstraint.constant = 83
+            self.labelImageViewTopConstraint.constant = 97
             UIView.animate(withDuration: 0.75, delay: 1.0, options: .curveEaseInOut, animations: { [weak self] in
                 self?.labelImageView.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
                 self?.view.layoutIfNeeded()

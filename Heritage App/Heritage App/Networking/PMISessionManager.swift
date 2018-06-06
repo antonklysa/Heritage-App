@@ -15,10 +15,19 @@ import Firebase
 import FirebaseCore
 
 
-class PMISessionManager: SessionManager {
+class PMISessionManager: NSObject {
+
+    static let sharedInstance = PMISessionManager()
     
     var storageRef : StorageReference?
     var ref : DatabaseReference?
+    
+    override init() {
+        super.init()
+        
+        self.storageRef = Storage.storage().reference()
+        self.ref = Database.database().reference()
+    }
     
     func syncReports(completion:@escaping(Error?) -> ()) {
         let listOfAllReports : [Report] = Report.listOfAllReports()

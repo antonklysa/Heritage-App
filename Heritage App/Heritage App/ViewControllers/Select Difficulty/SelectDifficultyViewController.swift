@@ -20,6 +20,20 @@ class SelectDifficultyViewController: ReportViewController {
         super.viewDidAppear(animated)
         
         self.preparingForSegue = false
+        
+        PMISessionManager.sharedInstance.syncReports { (error) in
+            if (error == nil) {
+                print("Sync completed successfuly.")
+            } else {
+                print("Sync ERROR. \(error?.localizedDescription)")
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.report = DataStoreManager.sharedInstance.createNewReportEntity()
     }
     
     //MARK: Actions

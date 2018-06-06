@@ -33,14 +33,17 @@ extension Report {
  
     func dictFromReport() -> [String : Any] {
         var reportDict : [String : Any] = [:]
-        reportDict["App"] = self.app
-        reportDict["Channel"] = self.channel
-        reportDict["Team"] = self.team
+        reportDict["Host Name"] = DataStoreManager.sharedInstance.hostName
+        reportDict["Theme Selected"] = self.themeSelected
+        reportDict["Touchpoint"] = DataStoreManager.sharedInstance.team!.reportStringValue()
+        
+        reportDict["City"] = DataStoreManager.sharedInstance.cityName
+        reportDict["Level"] = self.channel
         
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         if let time: NSDate = self.time {
-            reportDict["Time"] = dateFormatter.string(from: time as Date)
+            reportDict["Time-Date"] = dateFormatter.string(from: time as Date)
         } else {
             reportDict["Time"] = "Unknown"
         }
@@ -49,7 +52,7 @@ extension Report {
     }
     
     func isValidReport() -> Bool {
-        if (self.app != nil && self.channel != nil && self.team != nil && self.time != nil) {
+        if (self.channel != nil && self.time != nil && self.themeSelected != nil) {
             return true
         } else {
             return false

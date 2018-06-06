@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kzf-nv-dUa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lk-au-OoP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="398" y="-2113"/>
+            <point key="canvasLocation" x="273" y="-2083"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -573,7 +573,7 @@
         <!--Select Difficulty View Controller-->
         <scene sceneID="fMS-HL-OYu">
             <objects>
-                <viewController storyboardIdentifier="SelectDifficultyViewController" id="cj4-8S-tRO" customClass="SelectDifficultyViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cj4-8S-tRO" customClass="SelectDifficultyViewController" customModule="Heritage_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ef9-jE-iwb">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,30 +608,6 @@
                                     <constraint firstAttribute="trailing" secondItem="cHu-Bt-SDR" secondAttribute="trailing" id="wwS-Qc-9T0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khW-lr-zr2">
-                                <rect key="frame" x="139" y="198" width="243" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="select_difficulty_0"/>
-                                <connections>
-                                    <action selector="difficultyButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="yGG-nh-ZMm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHP-9m-3ki">
-                                <rect key="frame" x="643" y="197" width="243" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="select_difficulty_2"/>
-                                <connections>
-                                    <action selector="difficultyButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="00s-SI-0hT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQc-Zm-ziI">
-                                <rect key="frame" x="391" y="198" width="243" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="select_difficulty_1"/>
-                                <connections>
-                                    <action selector="difficultyButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="PQG-7Y-a2v"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2t-dp-cQz">
                                 <rect key="frame" x="963" y="0.0" width="61" height="57"/>
                                 <constraints>
@@ -641,6 +617,38 @@
                                 <state key="normal" image="settings_icon"/>
                                 <connections>
                                     <action selector="settingsButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="7h8-b7-Yj2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khW-lr-zr2">
+                                <rect key="frame" x="288" y="202" width="215" height="337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="select_difficulty_0"/>
+                                <connections>
+                                    <action selector="difficultyButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="yGG-nh-ZMm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSJ-vN-TiI">
+                                <rect key="frame" x="54" y="202" width="215" height="337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="stick_difficulty"/>
+                                <connections>
+                                    <action selector="difficultyButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="olC-C5-0wb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHP-9m-3ki">
+                                <rect key="frame" x="756" y="202" width="215" height="337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="select_difficulty_2"/>
+                                <connections>
+                                    <action selector="difficultyButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="00s-SI-0hT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQc-Zm-ziI">
+                                <rect key="frame" x="522" y="202" width="215" height="337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="select_difficulty_1"/>
+                                <connections>
+                                    <action selector="difficultyButtonAction:" destination="cj4-8S-tRO" eventType="touchUpInside" id="PQG-7Y-a2v"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -662,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6S-Ne-jfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="398" y="-1413"/>
+            <point key="canvasLocation" x="407" y="-1384"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tm0-wM-8Tn">
@@ -741,23 +749,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rG-p0-b8c" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="407" y="-669"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zG8-4X-sq5">
-            <objects>
-                <navigationController storyboardIdentifier="SelectCampaignViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="kzf-nv-dUa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yRp-T7-OKh">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5cH-ul-Uxw" kind="relationship" relationship="rootViewController" id="irI-Y9-Oeh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuC-NC-p0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-402" y="-2113"/>
         </scene>
         <!--Credentianls View Controller-->
         <scene sceneID="FfX-7k-ygy">
@@ -1020,7 +1011,24 @@ V 1.0</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9am-nt-2Z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122.65625" y="-1413.28125"/>
+            <point key="canvasLocation" x="1123" y="-1384"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cie-wI-zjb">
+            <objects>
+                <navigationController storyboardIdentifier="SelectDifficultyViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LfY-LW-ejr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cGh-cK-NEc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cj4-8S-tRO" kind="relationship" relationship="rootViewController" id="6QO-nF-vux"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4X-Yk-nYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="-1384"/>
         </scene>
     </scenes>
     <resources>
@@ -1051,6 +1059,7 @@ V 1.0</string>
         <image name="select_difficulty_1" width="234" height="367"/>
         <image name="select_difficulty_2" width="234" height="367"/>
         <image name="settings_icon" width="20" height="20"/>
+        <image name="stick_difficulty" width="214" height="337"/>
         <image name="synchronize_btn" width="139" height="159"/>
         <image name="win_finish" width="150" height="38"/>
     </resources>

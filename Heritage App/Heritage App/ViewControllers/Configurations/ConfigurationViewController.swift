@@ -43,6 +43,8 @@ class ConfigurationViewController: BaseViewController {
         } else {
             self.lastSyncLabel.text = "-"
         }
+        
+        self.hostNameTextField.text = DataStoreManager.sharedInstance.hostName
     }
     
     private func selectTeam(_ team: Team) {
@@ -104,6 +106,21 @@ class ConfigurationViewController: BaseViewController {
     }
     
     @IBAction func syncButtonAction(_ sender: Any) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        PMISessionManager.sharedInstance.syncReports { (error) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if (error == nil) {
+                let alertController = UIAlertController(title: "Success", message: "Report has been uploaded.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                let alertController = UIAlertController(title: "Error.", message: error?.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func backButtonAction(_ sender: Any) {

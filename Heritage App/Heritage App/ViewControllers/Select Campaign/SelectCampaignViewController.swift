@@ -20,6 +20,12 @@ class SelectCampaignViewController: ReportViewController {
         self.report = DataStoreManager.sharedInstance.createNewReportEntity()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
+    
     //MARK: Actions
     
     @IBAction func campaignButtonAction(_ sender: UIButton) {
