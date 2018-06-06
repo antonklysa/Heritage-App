@@ -21,20 +21,37 @@ class CategoriesViewController: ReportViewController {
     @IBOutlet weak var musicCategoryButton: UIButton!
     @IBOutlet weak var foodCategoryButton: UIButton!
     @IBOutlet weak var clothesCategoryButton: UIButton!
+    @IBOutlet weak var titleImageView: UIImageView!
+    @IBOutlet weak var rulesImageView: UIImageView!
     
     private var selectedType: CategoryButtonType!
-    
     
     //MARK: lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    //MARK: IBactions
+    //MARK: IBActions
     
     @IBAction private func buttonAction(sender: UIButton) {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.musicCategoryButton.alpha = 0.0
+            self.foodCategoryButton.alpha = 0.0
+            self.clothesCategoryButton.alpha = 0.0
+            self.titleImageView.alpha = 0.0
+        }) { (flag) in
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.rulesImageView.alpha = 1.0
+            }, completion: { (flag) in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.showGame(sender)
+                }
+            })
+        }
+    }
+    
+    func showGame(_ sender: UIButton) {
         let VCIdentifier: String = GameViewController.nameOfClass
         let gameVC: GameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: VCIdentifier) as! GameViewController
         gameVC.questions = jsonObjectsArrayByButtonType(button: sender)
@@ -49,7 +66,6 @@ class CategoriesViewController: ReportViewController {
         }
         navigationController?.pushViewController( gameVC, animated: true)
     }
-    
     
     //MARK: private funcs
     

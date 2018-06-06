@@ -72,6 +72,7 @@ class PMISessionManager: NSObject {
                         let child : String = String(format : "Report_%@.csv", Auth.auth().currentUser!.uid)
                         self.storageRef?.child(child).putFile(from: fileURL, metadata: nil, completion: { (metadata, uploadingError) in
                             completion(uploadingError)
+                            DataStoreManager.sharedInstance.syncDate = NSDate()
                         })
                     } else {
                         completion(authError)

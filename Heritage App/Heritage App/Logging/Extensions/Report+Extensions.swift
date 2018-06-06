@@ -39,7 +39,7 @@ extension Report {
         
         reportDict["City"] = DataStoreManager.sharedInstance.cityName
         reportDict["Level"] = self.channel
-        
+        reportDict["Won"] = self.isWin ? "YES" : "NO"
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         if let time: NSDate = self.time {

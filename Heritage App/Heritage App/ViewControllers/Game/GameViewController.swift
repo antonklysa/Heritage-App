@@ -213,19 +213,19 @@ class GameViewController: ReportViewController {
     
     private func winAction() {
         print("------- W I N -------")
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let vc: WinViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: WinViewController.self)) as! WinViewController
-            vc.report = self!.report
-            self?.navigationController?.pushViewController(vc, animated: true)
+            vc.report = self.report
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     private func loseAction() {
         print("------- L O S E -------")
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let vc: LoseViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoseViewController.self)) as! LoseViewController
-            vc.report = self!.report
-            self?.navigationController?.pushViewController(vc, animated: true)
+            vc.report = self.report
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

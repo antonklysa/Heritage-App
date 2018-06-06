@@ -18,6 +18,7 @@ class LoseViewController: ReportViewController {
         super.viewDidAppear(animated)
         
         self.report.time = NSDate()
+        self.report.isWin = false
         DataStoreManager.sharedInstance.saveContext()
     }
     

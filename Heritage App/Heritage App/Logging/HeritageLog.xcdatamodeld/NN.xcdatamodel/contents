@@ -5,11 +5,12 @@
         <attribute name="channel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hostName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isWin" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="team" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="themeSelected" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Report" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Report" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

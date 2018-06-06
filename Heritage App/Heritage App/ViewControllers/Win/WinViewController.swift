@@ -28,17 +28,17 @@ class WinViewController: ReportViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 0.75, delay: 1.7, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 1.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
             self.heritageImageView.alpha = 0
         }) { (flag) in
-            UIView.animate(withDuration: 0.75, delay: 1.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                 self.packImageView.alpha = 1.0
                 self.chesterfieldImageView.alpha = 1.0
             }, completion: { (flag) in
-                UIView.animate(withDuration: 0.75, delay: 1.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                UIView.animate(withDuration: 0.3, delay: 2.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                     self.chesterfieldImageView.alpha = 0.0
                 }, completion: { (flag) in
-                    UIView.animate(withDuration: 0.75, delay: 1.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                    UIView.animate(withDuration: 0.3, delay: 1.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                         self.lastImageView.alpha = 1.0
                         self.disconnectButton.alpha = 1.0
                     }, completion: { (flag) in
@@ -48,7 +48,8 @@ class WinViewController: ReportViewController {
             })
         }
         
-        self.report.time = NSDate()
+//        self.report.time = NSDate()
+//        self.report.isWin = true
         DataStoreManager.sharedInstance.saveContext()
     }
     

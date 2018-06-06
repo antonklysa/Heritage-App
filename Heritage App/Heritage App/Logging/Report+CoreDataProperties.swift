@@ -24,5 +24,6 @@ extension Report {
     @NSManaged public var hostName: String?
     @NSManaged public var themeSelected: String?
     @NSManaged public var city: String?
+    @NSManaged public var isWin: Bool
 
 }
