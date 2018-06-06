@@ -17,7 +17,6 @@ extension Report {
         return NSFetchRequest<Report>(entityName: "Report")
     }
 
-    @NSManaged public var app: String?
     @NSManaged public var channel: String?
     @NSManaged public var team: String?
     @NSManaged public var time: NSDate?

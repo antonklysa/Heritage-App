@@ -149,7 +149,7 @@ class DataStoreManager: NSObject {
         }
         
         guard let mom = NSManagedObjectModel.init(contentsOf: modelURL) else {
-            fatalError("Error initializing mom")
+            fatalError("Error initializing mom") 
         }
         
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
@@ -174,7 +174,6 @@ class DataStoreManager: NSObject {
     
     func createNewReportEntity() -> Report {
         let report: Report = NSEntityDescription.insertNewObject(forEntityName: Report.entityName(), into: self.managedObjectContext) as! Report
-        report.app = "Heritage"
         return report
     }
     
