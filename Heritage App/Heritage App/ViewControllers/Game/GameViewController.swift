@@ -26,6 +26,7 @@ class GameViewController: ReportViewController {
     private var seconds: Double = 30.0
     private var timer: Timer!
     
+    private var nextControllerPresentationInProgress: Bool = false
     
     @IBOutlet weak var labelImageView: UIImageView!
     @IBOutlet weak var labelImageViewTopConstraint: NSLayoutConstraint!
@@ -213,19 +214,26 @@ class GameViewController: ReportViewController {
     
     private func winAction() {
         print("------- W I N -------")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let vc: WinViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: WinViewController.self)) as! WinViewController
-            vc.report = self.report
-            self.navigationController?.pushViewController(vc, animated: true)
+        if self.nextControllerPresentationInProgress == false {
+            self.nextControllerPresentationInProgress = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let vc: WinViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: WinViewController.self)) as! WinViewController
+                vc.report = self.report
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     
     private func loseAction() {
         print("------- L O S E -------")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let vc: LoseViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoseViewController.self)) as! LoseViewController
-            vc.report = self.report
-            self.navigationController?.pushViewController(vc, animated: true)
+        if self.nextControllerPresentationInProgress == false {
+            self.nextControllerPresentationInProgress = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let vc: LoseViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoseViewController.self)) as! LoseViewController
+                vc.report = self.report
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }
