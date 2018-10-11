@@ -28,4 +28,5 @@ class BaseViewController: UIViewController {
         //setup controller props
         navigationController?.isNavigationBarHidden = true
     }
+    
 }

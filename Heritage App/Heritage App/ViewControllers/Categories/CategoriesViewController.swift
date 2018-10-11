@@ -11,16 +11,16 @@ import UIKit
 import Mantle
 
 enum CategoryButtonType: String {
-    case typeMusic = "music"
-    case typeFood = "food"
-    case typeClothes = "clothes"
+    case typeWood = "wood"
+    case typeCeramic = "ceramic"
+    case typeLeather = "leather"
 }
 
 class CategoriesViewController: ReportViewController {
     
-    @IBOutlet weak var musicCategoryButton: UIButton!
-    @IBOutlet weak var foodCategoryButton: UIButton!
-    @IBOutlet weak var clothesCategoryButton: UIButton!
+    @IBOutlet weak var woodCategoryButton: UIButton!
+    @IBOutlet weak var ceramicCategoryButton: UIButton!
+    @IBOutlet weak var leatherCategoryButton: UIButton!
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var rulesImageView: UIImageView!
     
@@ -36,9 +36,9 @@ class CategoriesViewController: ReportViewController {
     
     @IBAction private func buttonAction(sender: UIButton) {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.musicCategoryButton.alpha = 0.0
-            self.foodCategoryButton.alpha = 0.0
-            self.clothesCategoryButton.alpha = 0.0
+            self.woodCategoryButton.alpha = 0.0
+            self.ceramicCategoryButton.alpha = 0.0
+            self.leatherCategoryButton.alpha = 0.0
             self.titleImageView.alpha = 0.0
         }) { (flag) in
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
@@ -57,12 +57,12 @@ class CategoriesViewController: ReportViewController {
         gameVC.questions = jsonObjectsArrayByButtonType(button: sender)
         gameVC.gameType = selectedType
         gameVC.report = self.report
-        if sender.isEqual(musicCategoryButton) {
-            self.report.themeSelected = "Instruments"
-        } else if sender.isEqual(foodCategoryButton)  {
-            self.report.themeSelected = "Food"
-        } else if sender.isEqual(clothesCategoryButton) {
-            self.report.themeSelected = "Cloathes"
+        if sender.isEqual(woodCategoryButton) {
+            self.report.themeSelected = "Wood"
+        } else if sender.isEqual(ceramicCategoryButton)  {
+            self.report.themeSelected = "Ceramic"
+        } else if sender.isEqual(leatherCategoryButton) {
+            self.report.themeSelected = "Leather"
         }
         navigationController?.pushViewController( gameVC, animated: true)
     }
@@ -77,14 +77,14 @@ class CategoriesViewController: ReportViewController {
         let data = try! Data(contentsOf: url)
         let jsonDict: [String: AnyObject] = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String : AnyObject]
         print(jsonDict)
-        if button.isEqual(musicCategoryButton) {
-            selectedType = CategoryButtonType.typeMusic
+        if button.isEqual(woodCategoryButton) {
+            selectedType = CategoryButtonType.typeWood
             return try! MTLJSONAdapter.models(of: Question.self, fromJSONArray: jsonDict[selectedType.rawValue] as! [Any]) as! [Question]
-        } else if button.isEqual(foodCategoryButton)  {
-            selectedType = CategoryButtonType.typeFood
+        } else if button.isEqual(ceramicCategoryButton)  {
+            selectedType = CategoryButtonType.typeCeramic
             return try! MTLJSONAdapter.models(of: Question.self, fromJSONArray: jsonDict[selectedType.rawValue] as! [Any]) as! [Question]
-        } else if button.isEqual(clothesCategoryButton) {
-            selectedType = CategoryButtonType.typeClothes
+        } else if button.isEqual(leatherCategoryButton) {
+            selectedType = CategoryButtonType.typeLeather
             return try! MTLJSONAdapter.models(of: Question.self, fromJSONArray: jsonDict[selectedType.rawValue] as! [Any]) as! [Question]
         }
         

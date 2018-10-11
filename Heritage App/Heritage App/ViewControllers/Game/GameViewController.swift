@@ -22,8 +22,8 @@ class GameViewController: ReportViewController {
     private var player : AVAudioPlayer?
     
     private var countOfAttempts: Int = 0
-    private var seconds: Double = 30.0
     private var countOfRightAnswers: Int = 0
+    private var seconds: Double = 30.0
     private var timer: Timer!
     
     
@@ -77,12 +77,12 @@ class GameViewController: ReportViewController {
     private func setupControllerProps() {
         
         //setup top question label
-        if gameType == .typeClothes {
-            labelImageView.image = UIImage(named: "clothes_title_image")
-        } else if gameType == .typeFood {
-            labelImageView.image = UIImage(named: "food_title_image")
+        if gameType == .typeCeramic {
+            labelImageView.image = UIImage(named: "ceramic_title_image")
+        } else if gameType == .typeWood {
+            labelImageView.image = UIImage(named: "wood_title_image")
         } else {
-            labelImageView.image = UIImage(named: "music_title_image")
+            labelImageView.image = UIImage(named: "leather_title_image")
         }
         
         containerView.layer.cornerRadius = 5
