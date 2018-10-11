@@ -3,17 +3,17 @@
                 {
                 "id": 0,
                 "image": "wood_0",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
                 {
                 "id": 1,
                 "image": "wood_1",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 2,
                 "image": "wood_2",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
                 {
                 "id": 3,
@@ -23,34 +23,34 @@
                 {
                 "id": 4,
                 "image": "wood_4",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
             {
-            "id": 4,
+            "id": 5,
             "image": "wood_5",
             "is_right_answer": 0
             },
             {
-            "id": 4,
+            "id": 6,
             "image": "wood_6",
             "is_right_answer": 0
             },
             {
-            "id": 4,
+            "id": 7,
             "image": "wood_7",
             "is_right_answer": 0
             },
             {
-            "id": 4,
+            "id": 8,
             "image": "wood_8",
-            "is_right_answer": 0
+            "is_right_answer": 1
             }
                 ],
   "ceramic": [
                 {
                 "id": 0,
                 "image": "ceramic_0",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 1,
@@ -60,27 +60,27 @@
                 {
                 "id": 2,
                 "image": "ceramic_2",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
                 {
                 "id": 3,
                 "image": "ceramic_3",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 4,
                 "image": "ceramic_4",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
            {
            "id": 5,
            "image": "ceramic_5",
-           "is_right_answer": 0
+           "is_right_answer": 1
            },
            {
            "id": 6,
            "image": "ceramic_6",
-           "is_right_answer": 0
+           "is_right_answer": 1
            },
            {
            "id": 7,
@@ -102,12 +102,12 @@
                 {
                 "id": 1,
                 "image": "leather_1",
-                "is_right_answer": 0
+                "is_right_answer": 1
                 },
                 {
                 "id": 2,
                 "image": "leather_2",
-                "is_right_answer": 1
+                "is_right_answer": 0
                 },
                 {
                 "id": 3,
@@ -120,24 +120,24 @@
                 "is_right_answer": 0
                 },
               {
-              "id": 4,
+              "id": 5,
               "image": "leather_5",
-              "is_right_answer": 1
+              "is_right_answer": 0
               },
               {
-              "id": 4,
+              "id": 6,
               "image": "leather_6",
               "is_right_answer": 0
               },
               {
-              "id": 4,
+              "id": 7,
               "image": "leather_7",
               "is_right_answer": 1
               },
               {
-              "id": 4,
+              "id": 8,
               "image": "leather_8",
-              "is_right_answer": 0
+              "is_right_answer": 1
               }
                 ]
 }
