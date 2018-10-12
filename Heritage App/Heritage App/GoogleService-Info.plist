@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>937248104288-b7pfb7e0e4cvgbhljftufvknj5l73a8k.apps.googleusercontent.com</string>
+	<string>110307515250-ihpck3u5lhesso5elgroim9qv6d6b09n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.937248104288-b7pfb7e0e4cvgbhljftufvknj5l73a8k</string>
+	<string>com.googleusercontent.apps.110307515250-ihpck3u5lhesso5elgroim9qv6d6b09n</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBW2yrOLuj96bVolUnpLR6Fu9STROZvv9g</string>
+	<string>AIzaSyC6BJwt6K_mGEmhKJQb4rBSgJ96mNA_Kr4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>937248104288</string>
+	<string>110307515250</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.oze-lca.heritage</string>
+	<string>com.ozeapps.heritagecraft</string>
 	<key>PROJECT_ID</key>
-	<string>heritage-app-bcb62</string>
+	<string>heritage-craft</string>
 	<key>STORAGE_BUCKET</key>
-	<string>heritage-app-bcb62.appspot.com</string>
+	<string>heritage-craft.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:937248104288:ios:de389c258d2a8dc5</string>
+	<string>1:110307515250:ios:a5978468ce07f254</string>
 	<key>DATABASE_URL</key>
-	<string>https://heritage-app-bcb62.firebaseio.com</string>
+	<string>https://heritage-craft.firebaseio.com</string>
 </dict>
 </plist>

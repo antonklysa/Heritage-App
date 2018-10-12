@@ -135,11 +135,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA7-mo-GXA">
-                                <rect key="frame" x="669" y="275" width="225" height="316"/>
+                                <rect key="frame" x="669" y="258" width="250" height="350"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="316" id="GNb-wo-XRp"/>
-                                    <constraint firstAttribute="width" constant="225" id="nlO-TI-PFD"/>
+                                    <constraint firstAttribute="height" constant="350" id="GNb-wo-XRp"/>
+                                    <constraint firstAttribute="width" constant="250" id="nlO-TI-PFD"/>
                                 </constraints>
                                 <state key="normal" image="headdress _icon"/>
                                 <connections>
