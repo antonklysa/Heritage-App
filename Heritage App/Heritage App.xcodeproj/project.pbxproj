@@ -652,7 +652,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oze-lca.heritage";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oze-lca.heritage.craft";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8141ec22-a888-4dcc-86ce-7eab4f18db65";
 				PROVISIONING_PROFILE_SPECIFIER = WildCardProvisionProfile;
@@ -675,10 +675,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oze-lca.heritage";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oze-lca.heritage.craft";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8cb5027c-d0e3-4fc3-b50c-00e1b96f6fd1";
-				PROVISIONING_PROFILE_SPECIFIER = HeritageApp_AdHoc;
+				PROVISIONING_PROFILE = "1d5ffe93-bdc5-456b-8d6e-2dbd8e88d47b";
+				PROVISIONING_PROFILE_SPECIFIER = HeritageCraft_AdHoc;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
